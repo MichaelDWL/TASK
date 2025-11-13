@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/buttonjax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    
+    <main>
+        
+        <nav> 
+            <img src="./assets/profile.png" alt="foto de perfil">
+            <h1> User </h1>
+
+            <div class="btn-nav">
+                <button class="btn-opt">Caixa de entrada</button>   
+                <button class="btn-opt">Tarefas Concluídas</button> 
+                <button class="btn-opt">Configurações</button>  
+                <button class="btn-opt">Conta</button>  
+                <button class="btn-opt">sair</button>   
+            </ul>
+        </nav>
+
+        <div class="modal-task">
+            <div class="modal-content">
+                <button class="close-button" onclick="closeModal()">&times;</button>
+                <h2>Detalhes da Tarefa</h2>
+                <p>Aqui estão os detalhes da tarefa selecionada.</p>
+            </div>
+        </div>
+
+        <section class="task">    
+            <section class="task-pending">
+                
+                <h2>Tarefas Pendentes</h2>
+
+                <div class="container-tasks">
+                    
+                    <div class="task-card">    
+                        <h3> Nome do Solicitante </h3>
+                        <p>Descrição da tarefa 1</p>                    
+                        <button id="btn-zoom" onclick="openModal()">Iniciar</button>
+                    </div>
+                    <div class="task-card">
+                        <h3>Nome do Solicitante</h3>
+                        <p>Descrição da tarefa 2</p>
+                        <button>Iniciar</button>
+                    </div>
+                    <div class="task-card">
+                        <h3>Nome do Solicitante</h3>
+                        <p>Descrição da tarefa 3</p>
+                        <button>Iniciar</button>
+                    </div>
+                </div>
+            
+            </section>
+
+            <section class="task-working">
+
+                <h2> Tarefas em Execução </h2>
+                
+                <div class="container-tasks">
+                    <div class="task-card">
+                        <h3>Colaborador</h3>
+                        <p>Descrição da tarefa 1</p>
+                    </div>
+                    <div class="task-card">
+                        <h3>Colaborador</h3>
+                        <p>Descrição da tarefa 2</p>
+                    </div>
+                    <div class="task-card">
+                        <h3>Colaborador</h3>
+                        <p>Descrição da tarefa 3</p>
+                    </div>
+                </div>
+
+            </section>
+        </section>    
+    </main>
+
+<script src="./js/index.js"> </script>
+</body>
+</html>

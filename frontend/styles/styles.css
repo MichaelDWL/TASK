@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background:#dee4f5;
+    --background-button:#f2f2f2;
+    --color-text: #333;
+    --border-green: #7ed957;
+}
+
+
+
+body {
+    display: inline;
+    width: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    /* background-color: #fff; */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    gap: 25px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    
+    width: 250px;
+    /* border-right: 1px solid black; */
+    padding: 20px;
+    border-radius: 8px;
+    /* display: none; */
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-text);
+    margin: 10px 0;
+    font-weight: bold;
+    
+}
+nav img {
+    max-width: 100px;
+    width: 100%;
+    max-height: fit-content;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+nav h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 100%;
+}
+
+.btn-nav {
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+.btn-opt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100%;
+    max-height: 10px;
+    height: 100%;
+    max-width: 100%;
+
+
+    margin: 10px 0;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    
+    background-color: #f2f2f2 ;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.btn-opt:hover { 
+    background-color: var(--background-button);
+    cursor: pointer;
+    font-weight: bold;
+    transform: translatey(-5%);
+    transition: background-color 0.3s ease;
+    /* align-self: flex-end; */
+}
+
+.container-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* display: none; */
+}
+
+.task-pending{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.task-card  {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-right: 5px solid var(--border-green);
+    border-bottom: 5px solid var(--border-green);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+
+}
+
+.task-card p {
+    margin: 20px;
+    color: var(--color-text);
+
+    text-align: justify;
+    text-justify: inter-word; /* distribui espaço entre palavras */
+    line-height: 1.6;         /* espaçamento entre linhas */
+    word-spacing: 2px;        /* espaço extra entre palavras */
+    pointer-events: none;
+}
+
+h3 {
+    text-align: center;
+    pointer-events: none;
+}
+
+.task-working{
+    display: flex;
+    flex-direction: column;
+    gap: 15px
+}
+
+.task-working .task-card {
+    border-right: 5px solid #f39c12;
+    border-bottom: 5px solid #f39c12;
+}
+
+
+.container-tasks :hover {
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    /* transition: box-shadow 0.3s ease; */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Botão de iniciar task */
+.task-card button {
+    background-color: var(--background-button);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    
+    align-self: flex-end;
+    margin-top: 30px;
+}
+
+.task { 
+    display: flex;
+    gap: 25px;
+    border: 1px solid black;
+    margin: 15px;
+    padding: 15px;
+    /* display: none; */
+}
+
+.modal-task {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 25px;
+    display: none;    
+
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+.close-button {
+    border: none;
+    background-color: var(--background-button);
+    align-self: flex-end;
+    padding: 6px;
+    border-radius: 5px;
+    cursor: pointer;   
+}
