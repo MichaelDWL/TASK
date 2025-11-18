@@ -1,229 +1,325 @@
+/* ----------------------- RESET ----------------------- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --background:#dee4f5;
-    --background-button:#f2f2f2;
-    --color-text: #333;
-    --border-green: #7ed957;
+  --background: #dee4f5;
+  --background-button: #f2f2f2;
+  --color-text: #333;
+  --border-green: #7ed957;
 }
 
-
-
+/* ----------------------- BODY ----------------------- */
 body {
-    display: inline;
-    width: 100vh;
-    font-family: Arial, sans-serif;
-    background-color: var(--background);
-    padding: 20px;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: var(--background);
+  /* padding: 20px; */
+  /* align-items: center; */
+  /* gap: 20px; */
 }
 
+/* ----------------------- Titles ----------------------- */
+h1 {
+  color: var(--color-text);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: var(--color-text);
+  /* text-align: center; */
+}
+
+/* ----------------------- HEADER ----------------------- */
+header {
+  flex-direction: row;
+  justify-content: center;
+
+  padding: 20px;
+  width: 100%;
+
+  border-radius: 8px;
+  margin-bottom: 25px;
+  background-color: white;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* ----------------------- MAIN ----------------------- */
 main {
-    display: flex;
-    
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    /* background-color: #fff; */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    gap: 25px;
+  display: flex;
+  width: 100%;
+  gap: 30px;
+  height: fit-content;
+  height: 3000px;
 }
 
-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #ffffff;
-    
-    width: 250px;
-    /* border-right: 1px solid black; */
-    padding: 20px;
-    border-radius: 8px;
-    /* display: none; */
+/* ----------------------- MENU LATERAL ----------------------- */
+
+.menu {
+  display: flex;
+  flex-direction: column;
+
+  position: sticky;
+  top: 20px;
+
+  width: 100%;
+  max-width: 300px;
+  /* min-width: 240px; */
+  max-height: 600px;
+
+  padding: 20px;
+
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px #a2a1a1;
+  /* flex-shrink: 0; Impede que diminua demais */
 }
 
-nav a {
-    text-decoration: none;
-    color: var(--color-text);
-    margin: 10px 0;
-    font-weight: bold;
-    
-}
-nav img {
-    max-width: 100px;
-    width: 100%;
-    max-height: fit-content;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+.menu img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: #333 0 6px 10px;
 }
 
-nav h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    
-}
-
-nav ul {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    width: 100%;
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
 .btn-nav {
-    display: flex;
-    flex-direction: column;
-    
-
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .btn-opt {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    height: 100%;
-    max-height: 10px;
-    height: 100%;
-    max-width: 100%;
-
-
-    margin: 10px 0;
-    text-align: center;
-    border: none;
-    border-radius: 20px;
-    padding: 20px;
-    
-    background-color: #f2f2f2 ;
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  background: #f2f2f2;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  border-radius: 20px;
+  margin: 8px 0;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
-.btn-opt:hover { 
-    background-color: var(--background-button);
-    cursor: pointer;
-    font-weight: bold;
-    transform: translatey(-5%);
-    transition: background-color 0.3s ease;
-    /* align-self: flex-end; */
+.btn-opt:hover {
+  background: #e0e0e0;
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
 }
 
+/* ----------------------- MENU COLLAPSED  ----------------------- */
+
+.menu-collapsed {
+  display: flex;
+  flex-direction: column;
+
+  position: sticky;
+  top: 20px;
+
+  width: 100%;
+  max-width: 30px;
+  min-width: 30px;
+  max-height: 200px;
+
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px #a2a1a1;
+  align-items: center;
+  justify-content: center;
+  max-height: 600px;
+  display: none;
+}
+
+.menu-collapsed button {
+  height: 100%;
+  background: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* ----------------------- ÁREA DE TAREFAS ----------------------- */
 .container-tasks {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    /* display: none; */
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  align-items: flex-start;
 }
 
-.task-pending{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.task {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: 20px; /* controla o espaço entre as colunas */
+  justify-content: center; /* centraliza o grid no espaço disponível */
+  width: 100%;
+  max-width: 1000px; /* limita quanto o grid pode se espalhar */
+  margin: 0 auto; /* centra o bloco inteiro na página */
+  padding: 10px 20px; /* padding lateral pequeno (opcional) */
+  align-items: start;
 }
-.task-card  {
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-    border-right: 5px solid var(--border-green);
-    border-bottom: 5px solid var(--border-green);
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    overflow: hidden;
 
+/* Cada coluna (mantém estrutura interna) */
+.task-pending,
+.task-working {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+/* ----------------------- CARD ----------------------- */
+.task-card {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-right: 5px solid var(--border-green);
+  border-bottom: 5px solid var(--border-green);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.btn-start:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
 .task-card p {
-    margin: 20px;
-    color: var(--color-text);
-
-    text-align: justify;
-    text-justify: inter-word; /* distribui espaço entre palavras */
-    line-height: 1.6;         /* espaçamento entre linhas */
-    word-spacing: 2px;        /* espaço extra entre palavras */
-    pointer-events: none;
+  text-align: justify;
+  margin: 15px 0;
+  line-height: 1.6;
 }
 
-h3 {
-    text-align: center;
-    pointer-events: none;
-}
-
-.task-working{
-    display: flex;
-    flex-direction: column;
-    gap: 15px
-}
-
-.task-working .task-card {
-    border-right: 5px solid #f39c12;
-    border-bottom: 5px solid #f39c12;
-}
-
-
-.container-tasks :hover {
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
-    /* transition: box-shadow 0.3s ease; */
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-}
-
-/* Botão de iniciar task */
 .task-card button {
-    background-color: var(--background-button);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    
-    align-self: flex-end;
-    margin-top: 30px;
+  background: var(--background-button);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  align-self: flex-end;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-.task { 
-    display: flex;
-    gap: 25px;
-    border: 1px solid black;
-    margin: 15px;
-    padding: 15px;
-    /* display: none; */
+/* Cards de execução */
+.task-working .task-card {
+  border-right: 5px solid #f39c12;
+  border-bottom: 5px solid #f39c12;
 }
 
+/* ----------------------- MODAL ----------------------- */
 .modal-task {
-    display: flex;
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 25px;
-    display: none;    
-
+  display: flex;
+  justify-content: center;
+  background: white;
+  height: fit-content;
+  padding: 25px;
+  border-radius: 10px;
+  position: relative;
+  display: none;
 }
-
 .modal-content {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
+  margin: 20px;
+  /* border: #333 1px solid; */
+  padding: 20px;
 }
 
-.close-button {
-    border: none;
-    background-color: var(--background-button);
-    align-self: flex-end;
-    padding: 6px;
-    border-radius: 5px;
-    cursor: pointer;   
+.close-modal {
+  position: absolute;
+  top: 15px;
+  left: 90%;
+  border: none;
+  background-color: var(--background-button);
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.info-task {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.info-task ul {
+  list-style-type: none;
+}
+
+.info-task ul li {
+  margin-bottom: 10px;
+  background-color: #f3efef;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.info-task-desc {
+  height: 200px;
+}
+
+.info-task ul li p {
+  font-size: medium;
+  text-align: justify;
+}
+
+.footer-modal {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.footer-modal button {
+  align-self: right;
+  padding: 10px 20px;
+  border: none;
+  background-color: rgba(173, 255, 47, 0.6);
+  opacity: 0.8;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ----------------------- BOTÃO DE FECHAR MENU ----------------------- */
+.close-menu {
+  align-self: flex-end;
+  background: var(--background-button);
+  border: 1px solid #bbb;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ----------------------- RESPONSIVIDADE ----------------------- */
+@media (max-width: 900px) {
 }
