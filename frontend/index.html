@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tasks</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/buttonjax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpj}." , crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
@@ -18,8 +18,21 @@
             <!-- <a href="#">support</a> -->
 
         </div>
-
     </header>
+
+    <section class="seletores">
+        <div class="dropdown">
+            <div class="selected">Tarefas<i class="fa-solid fa-magnifying-glass"></i></div>
+            <div>
+                <ul class="options">
+                    <li>Todas</li>
+                    <li>Pendentes</li>
+                    <li>Em Execução</li>
+                    <li>Concluídas</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
     <main>
         <nav class="menu">
@@ -37,6 +50,8 @@
                     <button class="btn-opt">Inicio</button>
                     <button class="btn-opt">Minhas tarefas</button>
                     <button class="btn-opt">Tarefas Concluídas</button>
+                    <button class="btn-opt">Estatística</button>
+                    <button class="btn-opt">Feedbacks</button>
                     <button class="btn-opt">Configurações</button>
                     <button class="btn-opt">Conta</button>
                 </div>
@@ -51,6 +66,7 @@
 
         <div class="modal-task">
             <button class="close-modal" onclick="closeModal()">&times;</button>
+
             <div class="modal-content">
                 <h3>Detalhes da Tarefa</h3>
                 <div class="info-task">
@@ -71,7 +87,7 @@
 
         <section class="task">
 
-            <section class="task-pending">
+            <section class="task-pending" data-status="Pendentes">
 
                 <h2>Tarefas Pendentes</h2>
 
@@ -80,23 +96,34 @@
                     <div class="task-card">
                         <h3> Nome do Solicitante </h3>
                         <p>Descrição da tarefa 1</p>
-                        <button class="btn-start" onclick="openModal()">Iniciar</button>
+
+                        <div class="footer-task">
+                            <span class="times"> 17:00 - 22/11/25 </span>
+                            <button class="btn-start" onclick="openModal()">Iniciar</button>
+                        </div>
                     </div>
                     <div class="task-card">
-                        <h3>Nome do Solicitante</h3>
+                        <h3>Nome do Solicitante </h3>
                         <p>Descrição da tarefa 2</p>
-                        <button class="btn-start" onclick="openModal()">Iniciar</button>
+
+                        <div class="footer-task">
+                            <span class="times"> 17:00 - 22/11/25 </span>
+                            <button class="btn-start" onclick="openModal()">Iniciar</button>
+                        </div>
                     </div>
                     <div class="task-card">
-                        <h3>Nome do Solicitante</h3>
+                        <h3>Nome do Solicitante </h3>
                         <p>Descrição da tarefa 3</p>
-                        <button class="btn-start" onclick="openModal()">Iniciar</button>
+                        <div class="footer-task">
+                            <span class="times"> 17:00 - 22/11/25 </span>
+                            <button class="btn-start" onclick="openModal()">Iniciar</button>
+                        </div>
                     </div>
                 </div>
 
             </section>
 
-            <section class="task-working">
+            <section class="task-working" data-status="Em Execução">
 
                 <h2> Tarefas em Execução </h2>
 
@@ -104,18 +131,55 @@
                     <div class="task-card">
                         <h3>Colaborador</h3>
                         <p>Descrição da tarefa 1</p>
+                        <p>Início: 14:00 - 14/02/2025 </p>
                     </div>
                     <div class="task-card">
                         <h3>Colaborador</h3>
                         <p>Descrição da tarefa 2</p>
+                        <p>Início: 14:00 - 14/02/2025</p>
                     </div>
                     <div class="task-card">
                         <h3>Colaborador</h3>
                         <p>Descrição da tarefa 3</p>
+                        <p>Início: 14:00 - 14/02/2025</p>
                     </div>
                 </div>
 
             </section>
+
+            <section class="task-completed" data-status="Concluídas">
+
+                <h2> Tarefas Concluídas </h2>
+
+                <div class="container-tasks">
+                    <div class="task-card">
+                        <h3>Solicitante</h3>
+                        <p>Setor</p>
+                        <p>Resumo da tarefa </p>
+                        <div class="footer-task">
+                            <span class="times"> 17:00 - 22/11/25 </span>
+                        </div>
+                    </div>
+                    <div class="task-card">
+                        <h3>Solicitante</h3>
+                        <p>Setor</p>
+                        <p>Resumo da tarefa </p>
+                        <div class="footer-task">
+                            <span class="times"> 17:00 - 22/11/25 </span>
+                        </div>
+                    </div>
+                    <div class="task-card">
+                        <h3>Solicitante</h3>
+                        <p>Setor</p>
+                        <p>Resumo da tarefa </p>
+                        <div class="footer-task">
+                            <span class="times"> 17:00 - 22/11/25 </span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
         </section>
     </main>
 

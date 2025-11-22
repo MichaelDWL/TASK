@@ -7,6 +7,7 @@
 
 :root {
   --background: #dee4f5;
+  --background-painel: #ffffff;
   --background-button: #f2f2f2;
   --color-text: #333;
   --border-green: #7ed957;
@@ -45,8 +46,8 @@ header {
   width: 100%;
 
   border-radius: 8px;
-  margin-bottom: 25px;
-  background-color: white;
+  /* margin-bottom: 25px; */
+  background-color: var(--background-painel);
 }
 
 .header-container {
@@ -70,18 +71,16 @@ main {
 .menu {
   display: flex;
   flex-direction: column;
-
   position: sticky;
   top: 20px;
 
   width: 100%;
   max-width: 300px;
-  /* min-width: 240px; */
-  max-height: 600px;
+  max-height: 900px;
 
   padding: 20px;
 
-  background: #fff;
+  background: var(--background-painel);
   border-radius: 12px;
   box-shadow: 0 6px 14px #a2a1a1;
   /* flex-shrink: 0; Impede que diminua demais */
@@ -121,7 +120,7 @@ main {
 }
 
 .btn-opt:hover {
-  background: #e0e0e0;
+  background: var(--background-painel);
   box-shadow: 0 8px 14px rgba(0, 0, 0, 0.15);
   transform: translateY(-4px);
 }
@@ -140,7 +139,7 @@ main {
   min-width: 30px;
   max-height: 200px;
 
-  background: #fff;
+  background: var(--background-painel);
   border-radius: 12px;
   box-shadow: 0 6px 14px #a2a1a1;
   align-items: center;
@@ -151,11 +150,25 @@ main {
 
 .menu-collapsed button {
   height: 100%;
-  background: white;
+  background: var(--background-painel);
   border: none;
   padding: 6px 12px;
   border-radius: 12px;
   cursor: pointer;
+}
+
+/* ------------------ ANIMAÇÃO DO MENU LATERAL ------------------ */
+
+.menu {
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.menu.hidden {
+  transform: translateX(-40px);
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* ----------------------- ÁREA DE TAREFAS ----------------------- */
@@ -170,11 +183,11 @@ main {
 
 .task {
   display: grid;
-  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, minmax(320px, 1fr));
   gap: 20px; /* controla o espaço entre as colunas */
-  justify-content: center; /* centraliza o grid no espaço disponível */
+  /* justify-content: center; centraliza o grid no espaço disponível */
   width: 100%;
-  max-width: 1000px; /* limita quanto o grid pode se espalhar */
+  max-width: 1500px; /*limita quanto o grid pode se espalhar */
   margin: 0 auto; /* centra o bloco inteiro na página */
   padding: 10px 20px; /* padding lateral pequeno (opcional) */
   align-items: start;
@@ -182,7 +195,8 @@ main {
 
 /* Cada coluna (mantém estrutura interna) */
 .task-pending,
-.task-working {
+.task-working,
+.task-completed {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -194,7 +208,7 @@ main {
   max-width: 400px;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--background-painel);
   border-right: 5px solid var(--border-green);
   border-bottom: 5px solid var(--border-green);
   border-radius: 15px;
@@ -219,27 +233,43 @@ main {
   line-height: 1.6;
 }
 
-.task-card button {
-  background: var(--background-button);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  align-self: flex-end;
-  cursor: pointer;
-  font-weight: bold;
-}
-
 /* Cards de execução */
 .task-working .task-card {
   border-right: 5px solid #f39c12;
   border-bottom: 5px solid #f39c12;
 }
 
+.task-completed .task-card {
+  border-right: 5px solid hsl(234, 71%, 66%);
+  border-bottom: 5px solid hsl(234, 71%, 66%);
+}
+
+/* -------------------Footer do card -------------------*/
+.footer-task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+.btn-start {
+  background: var(--background-button);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  align-self: right;
+  cursor: pointer;
+  font-weight: bold;
+}
+.times {
+  font-size: small;
+  color: gray;
+}
+
 /* ----------------------- MODAL ----------------------- */
 .modal-task {
   display: flex;
   justify-content: center;
-  background: white;
+  background: var(--background-painel);
   height: fit-content;
   padding: 25px;
   border-radius: 10px;
@@ -278,7 +308,7 @@ main {
 
 .info-task ul li {
   margin-bottom: 10px;
-  background-color: #f3efef;
+  background-color: #f2f2f2;
   border-radius: 8px;
   padding: 10px;
 }
@@ -304,7 +334,7 @@ main {
   align-self: right;
   padding: 10px 20px;
   border: none;
-  background-color: rgba(173, 255, 47, 0.6);
+  background-color: rgba(165, 247, 43, 0.8);
   opacity: 0.8;
   border-radius: 6px;
   cursor: pointer;
@@ -318,6 +348,81 @@ main {
   padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
+}
+
+/* ----------------------- Filtro por status ----------------------- */
+
+.seletores {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  place-content: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+.dropdown {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  display: flex;
+  /* position: relative; */
+  place-content: center;
+  flex-direction: column;
+}
+
+.dropdown i {
+  float: right;
+  margin: 4px 4px 4px 0;
+  color: #666;
+}
+
+.selected {
+  width: 100%;
+  padding: 15px 19px;
+  border: 1px solid #ccc;
+  border-top: none;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 0 0 8px 8px;
+}
+
+.options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+  position: absolute;
+  width: 100%;
+  max-width: 400px;
+  display: none;
+  z-index: 10;
+}
+
+.options li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.options li:hover {
+  background: rgb(228, 228, 235, 0.9);
+  color: white;
+}
+/* ---------------------- ANIMAÇÕES DO FILTRO ---------------------- */
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  pointer-events: none;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 /* ----------------------- RESPONSIVIDADE ----------------------- */
