@@ -25,6 +25,10 @@ body {
   /* gap: 20px; */
 }
 
+body p {
+  font-size: 16px;
+}
+
 /* ----------------------- Titles ----------------------- */
 h1 {
   color: var(--color-text);
@@ -35,6 +39,10 @@ h2 {
   margin-bottom: 15px;
   color: var(--color-text);
   /* text-align: center; */
+}
+
+h3 {
+  font-size: 22px;
 }
 
 /* ----------------------- HEADER ----------------------- */
@@ -75,10 +83,10 @@ main {
   top: 20px;
 
   width: 100%;
-  max-width: 300px;
-  max-height: 900px;
+  max-width: 400px;
+  max-height: 750px;
 
-  padding: 20px;
+  padding: 40px;
 
   background: var(--background-painel);
   border-radius: 12px;
@@ -117,6 +125,8 @@ main {
   font-weight: bold;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+
+  font-size: 16px;
 }
 
 .btn-opt:hover {
@@ -137,14 +147,13 @@ main {
   width: 100%;
   max-width: 30px;
   min-width: 30px;
-  max-height: 200px;
+  max-height: 750px;
 
   background: var(--background-painel);
   border-radius: 12px;
   box-shadow: 0 6px 14px #a2a1a1;
   align-items: center;
   justify-content: center;
-  max-height: 600px;
   display: none;
 }
 
@@ -222,11 +231,6 @@ main {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
-.btn-start:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
-
 .task-card p {
   text-align: justify;
   margin: 15px 0;
@@ -260,8 +264,14 @@ main {
   cursor: pointer;
   font-weight: bold;
 }
+
+.btn-start:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
 .times {
-  font-size: small;
+  font-size: 16px;
   color: gray;
 }
 
@@ -318,7 +328,7 @@ main {
 }
 
 .info-task ul li p {
-  font-size: medium;
+  font-size: 16px;
   text-align: justify;
 }
 
@@ -334,7 +344,11 @@ main {
   align-self: right;
   padding: 10px 20px;
   border: none;
-  background-color: rgba(165, 247, 43, 0.8);
+  background-color: var(--border-green);
+
+  font-weight: bold;
+  font-size: 16px;
+
   opacity: 0.8;
   border-radius: 6px;
   cursor: pointer;

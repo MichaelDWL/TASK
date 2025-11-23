@@ -23,7 +23,15 @@ function openMenu() {
 
   menuCollapsed.style.display = "none";
 }
+function closeModal() {
+  btnClose.style.display = "none";
+  task.style.display = "flex";
+}
 
+function openModal() {
+  btnClose.style.display = "flex";
+  task.style.display = "none";
+}
 // .dropdown menu
 
 const dropdown = document.querySelector(".dropdown");
