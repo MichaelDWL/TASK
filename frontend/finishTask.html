@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks-ok</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpj}." , crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles/finishTask.css">
+</head>
+
+<body>
+
+    <body>
+
+        <header>
+            <div class="header-container">
+                <h1> Task Manager </h1>
+                <!-- <a href="#">support</a> -->
+
+            </div>
+        </header>
+
+        <section class="seletores">
+            <div class="dropdown">
+                <div class="selected">Tarefas<i class="fa-solid fa-magnifying-glass"></i></div>
+                <div>
+                    <ul class="options">
+                        <li>Todas</li>
+                        <li>Hoje</li>
+                        <li>Essa Semana</li>
+                        <li>Este Mês</li>
+                        <li>Ultimos 3 mêses</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <main>
+            <nav class="menu">
+
+                <button class="close-menu" onclick="closeMenu()"> &times; </button>
+
+                <div class="profile">
+
+                    <img src="./assets/profile.png" alt="foto de perfil">
+
+
+                    <h1> User </h1>
+
+                    <div class="btn-nav">
+                        <button class="btn-opt">Inicio</button>
+                        <button class="btn-opt">Minhas tarefas</button>
+                        <button class="btn-opt">Tarefas Concluídas</button>
+                        <button class="btn-opt">Estatística</button>
+                        <button class="btn-opt">Feedbacks</button>
+                        <button class="btn-opt">Configurações</button>
+                        <button class="btn-opt">Conta</button>
+                    </div>
+
+                </div>
+
+            </nav>
+
+            <nav class="menu-collapsed">
+                <button class="open-menu" onclick="openMenu()"> &#9776; </button>
+            </nav>
+
+            <div class="modal-task">
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+
+                <div class="modal-content">
+                    <h3>Detalhes da Tarefa</h3>
+                    <div class="info-task">
+                        <ul>
+                            <li> Solicitante: </li>
+                            <li> Local: </li>
+                            <li> Descrição: </li>
+                            <li class="info-task-desc">Aqui estão os detalhes da tarefa selecionada.</li>
+                        </ul>
+
+                        <div class="footer-modal">
+                            <button class="btn-confirm">Confirmar Início</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <section class="task">
+
+                <section class="task-completed" data-status="Concluídas">
+
+                    <h2> Tarefas Concluídas </h2>
+
+                    <div class="container-tasks">
+                        <div class="task-card">
+                            <h3>Solicitante</h3>
+                            <p>Setor</p>
+                            <p>Resumo da tarefa </p>
+                            <div class="footer-task">
+                                <span class="times"> 17:00 - 22/11/25 </span>
+                            </div>
+                        </div>
+                        <div class="task-card">
+                            <h3>Solicitante</h3>
+                            <p>Setor</p>
+                            <p>Resumo da tarefa </p>
+                            <div class="footer-task">
+                                <span class="times"> 17:00 - 22/11/25 </span>
+                            </div>
+                        </div>
+                        <div class="task-card">
+                            <h3>Solicitante</h3>
+                            <p>Setor</p>
+                            <p>Resumo da tarefa </p>
+                            <div class="footer-task">
+                                <span class="times"> 17:00 - 22/11/25 </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+            </section>
+        </main>
+
+        <script src="./js/index.js"> </script>
+    </body>
+
+</html>
+</body>
+
+</html>
