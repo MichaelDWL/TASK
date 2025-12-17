@@ -71,7 +71,7 @@ main {
   width: 100%;
   gap: 30px;
   height: fit-content;
-  height: 3000px;
+  /* height: 3000px; */
 }
 
 /* ----------------------- MENU LATERAL ----------------------- */
@@ -80,25 +80,29 @@ main {
   display: flex;
   flex-direction: column;
   position: sticky;
-  top: 20px;
+  top: 10px;
 
   width: 100%;
-  max-width: 400px;
-  max-height: 750px;
-
+  max-width: 300px;
+  max-height: calc(100vh - 20px);
+  overflow-y: auto;
   padding: 40px;
 
   background: var(--background-painel);
   border-radius: 12px;
   box-shadow: 0 6px 14px #a2a1a1;
-  /* flex-shrink: 0; Impede que diminua demais */
+  /* flex-shrink: 0; /*Impede que diminua demais */
+}
+
+.menu h1 {
+  font-size: 24px;
 }
 
 .menu img {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  max-width: 130px;
   border-radius: 50%;
-  box-shadow: #333 0 6px 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 }
 
 .profile {
@@ -115,12 +119,13 @@ main {
 }
 
 .btn-opt {
-  background: #f2f2f2;
+  background: #e6e6e6;
   border: none;
   padding: 14px;
+
   width: 100%;
-  border-radius: 20px;
-  margin: 8px 0;
+  border-radius: 12px;
+  margin: 12px 0;
   text-align: center;
   font-weight: bold;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
@@ -133,6 +138,49 @@ main {
   background: var(--background-painel);
   box-shadow: 0 8px 14px rgba(0, 0, 0, 0.15);
   transform: translateY(-4px);
+}
+
+.menu {
+  direction: rtl; /* move a scroll para a esquerda */
+}
+
+.menu * {
+  direction: ltr; /* mantém o texto normal */
+}
+
+/* Largura da barra */
+.menu::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Fundo da barra (trilho) */
+.menu::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 4px; /* arredonda o trilho */
+}
+
+/* Parte que se move (thumb) */
+.menu::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
+  border-radius: 4px; /* arredonda o botão de scroll */
+}
+
+/* Hover */
+.menu::-webkit-scrollbar-thumb:hover {
+  background: #9d9d9d;
+}
+
+/* ----------------------- BOTÃO DE FECHAR MENU ----------------------- */
+.close-menu {
+  position: absolute;
+  top: 20px;
+  right: 18px;
+
+  background: var(--background-button);
+  border: 1px solid #bbb;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 /* ----------------------- MENU COLLAPSED  ----------------------- */
@@ -192,7 +240,7 @@ main {
 
 .task {
   display: grid;
-  grid-template-columns: repeat(3, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px; /* controla o espaço entre as colunas */
   /* justify-content: center; centraliza o grid no espaço disponível */
   width: 100%;
@@ -350,16 +398,6 @@ main {
   font-size: 16px;
 
   opacity: 0.8;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* ----------------------- BOTÃO DE FECHAR MENU ----------------------- */
-.close-menu {
-  align-self: flex-end;
-  background: var(--background-button);
-  border: 1px solid #bbb;
-  padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
 }

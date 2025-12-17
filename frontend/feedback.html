@@ -16,26 +16,7 @@
         <header>
             <div class="header-container">
                 <h1> Task Manager </h1>
-                <!-- <a href="#">support</a> -->
-
-            </div>
         </header>
-
-        <section class="seletores">
-            <div class="dropdown">
-                <div class="selected">Tarefas<i class="fa-solid fa-magnifying-glass"></i></div>
-                <div>
-                    <ul class="options">
-                        <li>Todas</li>
-                        <li>Hoje</li>
-                        <li>Essa Semana</li>
-                        <li>Este Mês</li>
-                        <li>Ultimos 3 mêses</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
         <main>
             <nav class="menu">
 
@@ -59,83 +40,76 @@
                     </div>
 
                 </div>
-
             </nav>
 
-            <nav class="menu-collapsed">
-                <button class="open-menu" onclick="openMenu()"> &#9776; </button>
-            </nav>
+            <section class="container-feedbacks">
+                <h1> Feedbacks </h1>
 
-            <div class="modal-task">
-                <button class="close-modal" onclick="closeModal()">&times;</button>
-
-                <div class="modal-content">
-                    <h3>Detalhes da Tarefa</h3>
-                    <div class="info-task">
-                        <ul>
-                            <li> Solicitante: </li>
-                            <li> Local: </li>
-                            <li> Descrição: </li>
-                            <li class="info-task-desc">Aqui estão os detalhes da tarefa selecionada.</li>
-                        </ul>
-
-                        <div class="footer-modal">
-                            <button class="btn-confirm">Confirmar Início</button>
-                        </div>
-
+                <div class="feedbacks">
+                    <div>
+                        <img src="./assets/profile.png" alt="Foto de perfil">
+                    </div>
+                    <div class="info-feedbacks">
+                        <h3> Nome </h3>
+                        <p> Setor </p>
+                        <p>
+                            Muito obrigado, por ter finalizado minha tarefa...está
+                            tudo de arcordo e funcionando normalmente. Aguardo o retorno para a instalação de
+                            um novo computador para otimizar os fluxos do setor.
+                        </p>
                     </div>
                 </div>
-            </div>
 
-            <section class="task">
-
-                <section class="task-completed" data-status="Concluídas">
-
-                    <h2> Feedbacks </h2>
-
-                    <div class="container-tasks">
-                        <div class="task-card">
-
-                            <div class="profile-img">
-                                <img src="./assets/profile.png" alt="foto de perfil">
-                            </div>
-                            <h3>Autor</h3>
-                            <p>Setor</p>
-                            <p> Minha tarefa foi concluida com sucesso, muito obrigado </p>
-                            <div class="footer-task">
-                                <span class="times"> 17:00 - 22/11/25 </span>
-                            </div>
-                        </div>
-                        <div class="task-card">
-                            <div class="profile-img">
-                                <img src="./assets/profile.png" alt="foto de perfil">
-                            </div>
-                            <h3>Solicitante</h3>
-                            <p>Setor</p>
-                            <p>Resumo da tarefa </p>
-                            <div class="footer-task">
-                                <span class="times"> 17:00 - 22/11/25 </span>
-                            </div>
-                        </div>
-                        <div class="task-card">
-                            <div class="profile-img">
-                                <img src="./assets/profile.png" alt="foto de perfil">
-                            </div>
-                            <h3>Solicitante</h3>
-                            <p>Setor</p>
-                            <p>Resumo da tarefa </p>
-                            <div class="footer-task">
-                                <span class="times"> 17:00 - 22/11/25 </span>
-                            </div>
-                        </div>
+                <div class="feedbacks">
+                    <div>
+                        <img src="./assets/profile.png" alt="Foto de perfil">
                     </div>
+                    <div class="info-feedbacks">
+                        <h3> Nome </h3>
+                        <p> Setor </p>
+                        <p>
+                            Muito obrigado, por ter finalizado minha tarefa...está
+                            tudo de arcordo e funcionando normalmente. Aguardo o retorno para a instalação de
+                            um novo computador para otimizar os fluxos do setor.
+                        </p>
+                    </div>
+                </div>
 
-                </section>
+                <div class="feedbacks">
+                    <div>
+                        <img src="./assets/profile.png" alt="Foto de perfil">
+                    </div>
+                    <div class="info-feedbacks">
+                        <h3> Nome </h3>
+                        <p> Setor </p>
+                        <p>
+                            Muito obrigado, por ter finalizado minha tarefa...está
+                            tudo de arcordo e funcionando normalmente. Aguardo o retorno para a instalação de
+                            um novo computador para otimizar os fluxos do setor.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feedbacks">
+                    <div>
+                        <img src="./assets/profile.png" alt="Foto de perfil">
+                    </div>
+                    <div class="info-feedbacks">
+                        <h3> Nome </h3>
+                        <p> Setor </p>
+                        <p>
+                            Muito obrigado, por ter finalizado minha tarefa...está
+                            tudo de arcordo e funcionando normalmente. Aguardo o retorno para a instalação de
+                            um novo computador para otimizar os fluxos do setor.
+                        </p>
+                    </div>
+                </div>
+
 
             </section>
         </main>
 
-        <script src="./js/index.js"> </script>
+        <script src="./js/feedback.js"> </script>
     </body>
 
 </html>

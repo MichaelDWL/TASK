@@ -3,7 +3,7 @@ const task = document.querySelector(".task");
 const menu = document.querySelector(".menu");
 const menuCollapsed = document.querySelector(".menu-collapsed");
 
-function closeMenu() {
+export function closeMenu() {
   menu.classList.add("hidden");
 
   // só mostra o menu-collapsed depois da animação
@@ -13,7 +13,7 @@ function closeMenu() {
   }, 350);
 }
 
-function openMenu() {
+export function openMenu() {
   menu.style.display = "flex";
 
   // força o navegador a reprocessar antes de remover a classe
@@ -23,16 +23,17 @@ function openMenu() {
 
   menuCollapsed.style.display = "none";
 }
-function closeModal() {
+export function closeModal() {
   btnClose.style.display = "none";
   task.style.display = "flex";
 }
 
-function openModal() {
+export function openModal() {
   btnClose.style.display = "flex";
   task.style.display = "none";
 }
-// .dropdown menu
+
+// .dropdown Filter
 
 const dropdown = document.querySelector(".dropdown");
 const selected = dropdown.querySelector(".selected");

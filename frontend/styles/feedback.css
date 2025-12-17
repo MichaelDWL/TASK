@@ -54,7 +54,7 @@ header {
   width: 100%;
 
   border-radius: 8px;
-  /* margin-bottom: 25px; */
+  margin-bottom: 25px;
   background-color: var(--background-painel);
 }
 
@@ -71,7 +71,7 @@ main {
   width: 100%;
   gap: 30px;
   height: fit-content;
-  height: 3000px;
+  /* height: 3000px; */
 }
 
 /* ----------------------- MENU LATERAL ----------------------- */
@@ -80,25 +80,29 @@ main {
   display: flex;
   flex-direction: column;
   position: sticky;
-  top: 20px;
+  top: 10px;
 
   width: 100%;
-  max-width: 400px;
-  max-height: 750px;
-
+  max-width: 300px;
+  max-height: calc(100vh - 20px);
+  overflow-y: auto;
   padding: 40px;
 
   background: var(--background-painel);
   border-radius: 12px;
   box-shadow: 0 6px 14px #a2a1a1;
-  /* flex-shrink: 0; Impede que diminua demais */
+  /* flex-shrink: 0; /*Impede que diminua demais */
+}
+
+.menu h1 {
+  font-size: 24px;
 }
 
 .menu img {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  max-width: 130px;
   border-radius: 50%;
-  box-shadow: #333 0 6px 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 }
 
 .profile {
@@ -115,12 +119,13 @@ main {
 }
 
 .btn-opt {
-  background: #f2f2f2;
+  background: #e6e6e6;
   border: none;
   padding: 14px;
+
   width: 100%;
-  border-radius: 20px;
-  margin: 8px 0;
+  border-radius: 12px;
+  margin: 12px 0;
   text-align: center;
   font-weight: bold;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
@@ -135,6 +140,49 @@ main {
   transform: translateY(-4px);
 }
 
+.menu {
+  direction: rtl; /* move a scroll para a esquerda */
+}
+
+.menu * {
+  direction: ltr; /* mantém o texto normal */
+}
+
+/* Largura da barra */
+.menu::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Fundo da barra (trilho) */
+.menu::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 4px; /* arredonda o trilho */
+}
+
+/* Parte que se move (thumb) */
+.menu::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
+  border-radius: 4px; /* arredonda o botão de scroll */
+}
+
+/* Hover */
+.menu::-webkit-scrollbar-thumb:hover {
+  background: #9d9d9d;
+}
+
+/* ----------------------- BOTÃO DE FECHAR MENU ----------------------- */
+.close-menu {
+  position: absolute;
+  top: 20px;
+  right: 18px;
+
+  background: var(--background-button);
+  border: 1px solid #bbb;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 /* ----------------------- MENU COLLAPSED  ----------------------- */
 
 .menu-collapsed {
@@ -147,14 +195,13 @@ main {
   width: 100%;
   max-width: 30px;
   min-width: 30px;
-  max-height: 200px;
+  max-height: 750px;
 
   background: var(--background-painel);
   border-radius: 12px;
   box-shadow: 0 6px 14px #a2a1a1;
   align-items: center;
   justify-content: center;
-  max-height: 600px;
   display: none;
 }
 
@@ -181,244 +228,51 @@ main {
   pointer-events: none;
 }
 
-/* ----------------------- ÁREA DE TAREFAS ----------------------- */
-.container-tasks {
+/* ---------------------- Feedbacks-card ----------------------------- */
+
+.container-feedbacks {
   display: flex;
-  width: 100%;
-  flex-direction: column;
-  gap: 20px;
   flex: 1;
-  align-items: flex-start;
-}
-
-.task {
-  display: flex;
-  gap: 20px; /* controla o espaço entre as colunas */
-  /* justify-content: center; centraliza o grid no espaço disponível */
+  flex-direction: column;
+  border: 1px solid black;
   width: 100%;
-  max-width: 1500px; /*limita quanto o grid pode se espalhar */
-  margin: 0 auto; /* centra o bloco inteiro na página */
-  padding: 10px 20px; /* padding lateral pequeno (opcional) */
-  align-items: start;
+  max-width: 900px;
+  gap: 20px;
+  padding: 20px;
 }
 
-.task-completed {
+.feedbacks {
+  background: var(--background-painel);
+  border-radius: 12px;
+  padding: 20px;
+  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.feedbacks:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.info-feedbacks {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.feedbacks p,
+h2 {
+  grid-column: 2;
+}
+
+.feedbacks img {
   width: 100%;
-}
-
-/* ----------------------- CARD ----------------------- */
-
-.task-card {
-  width: 100%;
-  max-width: 800px;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  background-color: var(--background-painel);
-  border-right: 5px solid hsl(234, 71%, 66%);
-  border-bottom: 5px solid hsl(234, 71%, 66%);
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-}
-
-.profile-img img {
-  width: 100%;
-  max-width: 60px;
-}
-
-.task-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
-
-.task-card p {
-  text-align: justify;
-  margin: 15px 0;
-  line-height: 1.6;
-}
-
-/* Cards de execução */
-
-/* -------------------Footer do card -------------------*/
-.footer-task {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
-}
-
-.times {
-  font-size: 16px;
-  color: gray;
-}
-
-/* ----------------------- MODAL ----------------------- */
-.modal-task {
-  display: flex;
-  justify-content: center;
-  background: var(--background-painel);
-  height: fit-content;
-  padding: 25px;
-  border-radius: 10px;
-  position: relative;
-  display: none;
-}
-.modal-content {
-  margin: 20px;
-  /* border: #333 1px solid; */
-  padding: 20px;
-}
-
-.close-modal {
-  position: absolute;
-  top: 15px;
-  left: 90%;
-  border: none;
-  background-color: var(--background-button);
-  padding: 6px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 30px;
-}
-
-.info-task {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.info-task ul {
-  list-style-type: none;
-}
-
-.info-task ul li {
-  margin-bottom: 10px;
-  background-color: #f2f2f2;
-  border-radius: 8px;
-  padding: 10px;
-}
-
-.info-task-desc {
-  height: 200px;
-}
-
-.info-task ul li p {
-  font-size: 16px;
-  text-align: justify;
-}
-
-.footer-modal {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
-  align-items: center;
-}
-
-.footer-modal button {
-  align-self: right;
-  padding: 10px 20px;
-  border: none;
-  background-color: var(--border-green);
-
-  font-weight: bold;
-  font-size: 16px;
-
-  opacity: 0.8;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* ----------------------- BOTÃO DE FECHAR MENU ----------------------- */
-
-.close-menu {
-  align-self: flex-end;
-  background: var(--background-button);
-  border: 1px solid #bbb;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* ----------------------- Filtro por status ----------------------- */
-
-.seletores {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 15px;
-  place-content: center;
-  font-size: large;
-  font-weight: bold;
-}
-
-.dropdown {
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
-  display: flex;
-  /* position: relative; */
-  place-content: center;
-  flex-direction: column;
-}
-
-.dropdown i {
-  float: right;
-  margin: 4px 4px 4px 0;
-  color: #666;
-}
-
-.selected {
-  width: 100%;
-  padding: 15px 19px;
-  border: 1px solid #ccc;
-  border-top: none;
-  background: #fff;
-  cursor: pointer;
-  border-radius: 0 0 8px 8px;
-}
-
-.options {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: 1px solid #ccc;
-  background: #fff;
-  border-radius: 0 0 8px 8px;
-  position: absolute;
-  width: 100%;
-  max-width: 400px;
-  display: none;
-  z-index: 10;
-}
-
-.options li {
-  padding: 8px 12px;
-  cursor: pointer;
-}
-
-.options li:hover {
-  background: rgb(228, 228, 235, 0.9);
-  color: white;
-}
-/* ---------------------- ANIMAÇÕES DO FILTRO ---------------------- */
-
-.fade-out {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-  pointer-events: none;
-}
-
-.fade-in {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  max-width: 200px;
+  grid-column: 1;
+  grid-row: 1/3;
 }
 
 /* ----------------------- RESPONSIVIDADE ----------------------- */
