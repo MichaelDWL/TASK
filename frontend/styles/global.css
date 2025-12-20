@@ -6,6 +6,7 @@
 }
 
 a {
+  font-family: "Fira Sans", sans-serif;
   text-decoration: none;
 }
 
@@ -34,6 +35,17 @@ h1 {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+h1,
+h2,
+h3 {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: bold;
+}
+
+p {
+  font-family: "Fira Sans", sans-serif;
+}
+
 h2 {
   margin-bottom: 15px;
   color: var(--color-text);
@@ -50,4 +62,12 @@ body {
   /* padding: 20px; */
   /* align-items: center; */
   /* gap: 20px; */
+}
+
+main {
+  display: flex;
+  width: 100%;
+  gap: 30px;
+  height: fit-content;
+  /* height: 3000px; */
 }

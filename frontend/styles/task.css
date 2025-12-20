@@ -4,6 +4,10 @@
   gap: 2rem;
 }
 
+.task p {
+  max-width: 40ch;
+}
+
 .task-container {
   display: flex;
   flex-direction: column;
@@ -35,11 +39,26 @@
 }
 
 .times {
-  font-size: 1rem;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 0.875rem;
   color: grey;
 }
 
 .task-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+.task-footer {
+  display: flex;
+  align-items: center;
+}
+.btn-start {
+  background: var(--background-button);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  align-self: right;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: auto;
 }

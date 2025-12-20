@@ -1,0 +1,18 @@
+.header {
+  flex-direction: row;
+  justify-content: center;
+
+  padding: 20px;
+  width: 100%;
+
+  border-radius: 8px;
+  /* margin-bottom: 25px; */
+  background-color: var(--background-painel);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}

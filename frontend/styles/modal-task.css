@@ -1,37 +1,3 @@
-@import "./menu.css ";
-@import "./global.css ";
-@import "./filtro.css ";
-@import "./task.css";
-@import "./header.css";
-@import "./modal-task";
-/* ----------------------- MAIN ----------------------- */
-/* -------------------Footer do card -------------------*/
-/* .footer-task {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: auto;
-}
-.btn-start {
-  background: var(--background-button);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  align-self: right;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.btn-start:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
-
-.times {
-  font-size: 16px;
-  color: gray;
-} */
-/* ----------------------- MODAL ----------------------- */
 .modal-task {
   display: flex;
   justify-content: center;
@@ -44,7 +10,6 @@
 }
 .modal-content {
   margin: 20px;
-  /* border: #333 1px solid; */
   padding: 20px;
 }
 
@@ -77,15 +42,12 @@
   background-color: #f2f2f2;
   border-radius: 8px;
   padding: 10px;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1rem;
 }
 
 .info-task-desc {
   height: 200px;
-}
-
-.info-task ul li p {
-  font-size: 16px;
-  text-align: justify;
 }
 
 .footer-modal {
@@ -108,8 +70,4 @@
   opacity: 0.8;
   border-radius: 6px;
   cursor: pointer;
-}
-
-/* ----------------------- RESPONSIVIDADE ----------------------- */
-@media (max-width: 900px) {
 }
