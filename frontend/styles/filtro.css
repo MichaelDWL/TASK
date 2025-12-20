@@ -1,0 +1,74 @@
+/* ----------------------- Filtro por status ----------------------- */
+
+.seletores {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  place-content: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+.dropdown {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  display: flex;
+  /* position: relative; */
+  place-content: center;
+  flex-direction: column;
+}
+
+.dropdown i {
+  float: right;
+  margin: 4px 4px 4px 0;
+  color: #666;
+}
+
+.selected {
+  width: 100%;
+  padding: 15px 19px;
+  border: 1px solid #ccc;
+  border-top: none;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 0 0 8px 8px;
+}
+
+.options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+  position: absolute;
+  width: 100%;
+  max-width: 400px;
+  display: none;
+  z-index: 10;
+}
+
+.options li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.options li:hover {
+  background: rgb(228, 228, 235, 0.9);
+  color: white;
+}
+/* ---------------------- ANIMAÇÕES DO FILTRO ---------------------- */
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  pointer-events: none;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}

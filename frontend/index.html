@@ -46,25 +46,25 @@
 
                 <h1> User </h1>
 
-                <div class="btn-nav">
-                    <button class="btn-opt">Inicio</button>
-                    <button class="btn-opt">Minhas tarefas</button>
-                    <button class="btn-opt">Tarefas Concluídas</button>
-                    <button class="btn-opt">Estatística</button>
-                    <button class="btn-opt">Feedbacks</button>
-                    <button class="btn-opt">Configurações</button>
-                    <button class="btn-opt">Conta</button>
-                </div>
+                <ul class="btn-nav">
+                    <li><button class="btn-opt">Inicio</button></li>
+                    <li><button class="btn-opt">Minhas tarefas</button></li>
+                    <li><button class="btn-opt">Tarefas Concluídas</button></li>
+                    <li><button class="btn-opt">Estatística</button></li>
+                    <li><button class="btn-opt">Feedbacks</button></li>
+                    <li><button class="btn-opt">Configurações</button></li>
+                    <li><button class="btn-opt">Conta</button></li>
+                </ul>
 
             </div>
 
         </nav>
 
-        <nav class="menu-collapsed">
+        <div class="menu-collapsed">
             <button class="open-menu" onclick="openMenu()"> &#9776; </button>
-        </nav>
+        </div>
 
-        <div class="modal-task">
+        <section class="modal-task">
             <button class="close-modal" onclick="closeModal()">&times;</button>
 
             <div class="modal-content">
@@ -83,51 +83,52 @@
 
                 </div>
             </div>
-        </div>
+        </section>
 
         <section class="task">
-
-            <section class="task-pending" data-status="Pendentes">
+            <section class="task-pending" aria-label="Tarefas Pendentes" data-status="Pendentes">
 
                 <h2>Tarefas Pendentes</h2>
-
-                <div class="container-tasks">
-
+                <div class="task-container">
                     <div class="task-card">
                         <h3> Nome do Solicitante </h3>
-                        <p>Descrição da tarefa 1</p>
+                        <p>
+                            O vaso do banheiro da CAF, está quebrado...gostaria de
+                            solicitar o reparo
+                        </p>
 
-                        <div class="footer-task">
+                        <div class="task-footer">
                             <span class="times"> 17:00 - 22/11/25 </span>
                             <button class="btn-start" onclick="openModal()">Iniciar</button>
                         </div>
                     </div>
+
                     <div class="task-card">
                         <h3>Nome do Solicitante </h3>
                         <p>Descrição da tarefa 2</p>
 
-                        <div class="footer-task">
+                        <div class="task-footer">
                             <span class="times"> 17:00 - 22/11/25 </span>
                             <button class="btn-start" onclick="openModal()">Iniciar</button>
                         </div>
                     </div>
+
                     <div class="task-card">
                         <h3>Nome do Solicitante </h3>
                         <p>Descrição da tarefa 3</p>
-                        <div class="footer-task">
+                        <div class="task-footer">
                             <span class="times"> 17:00 - 22/11/25 </span>
                             <button class="btn-start" onclick="openModal()">Iniciar</button>
                         </div>
                     </div>
                 </div>
-
             </section>
 
-            <section class="task-working" data-status="Em Execução">
+            <section class="task-working" aria-label="Tarefas em Execução" data-status="Em Execução">
 
                 <h2> Tarefas em Execução </h2>
 
-                <div class="container-tasks">
+                <div class="task-container">
                     <div class="task-card">
                         <h3>Colaborador</h3>
                         <p>Descrição da tarefa 1</p>
@@ -147,11 +148,11 @@
 
             </section>
 
-            <section class="task-completed" data-status="Concluídas">
+            <section class="task-completed" aria-label="Tarefas Concluídas" data-status="Concluídas">
 
                 <h2> Tarefas Concluídas </h2>
 
-                <div class="container-tasks">
+                <div class="task-container">
                     <div class="task-card">
                         <h3>Solicitante</h3>
                         <p>Setor</p>
@@ -179,7 +180,6 @@
                 </div>
 
             </section>
-
         </section>
     </main>
 

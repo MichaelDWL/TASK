@@ -3,7 +3,7 @@ const task = document.querySelector(".task");
 const menu = document.querySelector(".menu");
 const menuCollapsed = document.querySelector(".menu-collapsed");
 
-export function closeMenu() {
+function closeMenu() {
   menu.classList.add("hidden");
 
   // só mostra o menu-collapsed depois da animação
@@ -13,7 +13,7 @@ export function closeMenu() {
   }, 350);
 }
 
-export function openMenu() {
+function openMenu() {
   menu.style.display = "flex";
 
   // força o navegador a reprocessar antes de remover a classe
@@ -23,12 +23,13 @@ export function openMenu() {
 
   menuCollapsed.style.display = "none";
 }
-export function closeModal() {
+
+function closeModal() {
   btnClose.style.display = "none";
   task.style.display = "flex";
 }
 
-export function openModal() {
+function openModal() {
   btnClose.style.display = "flex";
   task.style.display = "none";
 }

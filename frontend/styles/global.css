@@ -1,0 +1,53 @@
+/* ----------------------- RESET ----------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+:root {
+  --background: #dee4f5;
+  --background-painel: #ffffff;
+  --background-button: #f2f2f2;
+  --color-text: #333;
+  --border-green: #7ed957;
+  --border-orange: #f39c12;
+  --border-blue: hsl(234, 71%, 66%);
+}
+
+/* ----------------------- Titles ----------------------- */
+
+h1 {
+  color: var(--color-text);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: var(--color-text);
+  /* text-align: center; */
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background);
+  /* padding: 20px; */
+  /* align-items: center; */
+  /* gap: 20px; */
+}
