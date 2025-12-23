@@ -1,9 +1,10 @@
 .task {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  width: 100%;
   margin: 2rem;
   gap: 2rem;
-  justify-items: center;
+  /* justify-items: center; */
 }
 
 .task p {
@@ -20,15 +21,23 @@
 .task-card {
   display: flex;
   flex-direction: column;
-
   background: var(--background-painel);
   border-radius: 8px;
   padding: 1.25rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
   gap: 1rem;
   border-right: 4px solid var(--border-green);
   border-bottom: 4px solid var(--border-green);
+  transition: all 0.3s ease;
+}
+
+.task-card p {
+  margin-bottom: 30px;
+}
+
+.task-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
 .task-working .task-card {
@@ -44,18 +53,22 @@
 .times {
   font-family: "Fira Sans", sans-serif;
   font-size: 0.875rem;
+  line-height: 1.2;
   color: grey;
 }
 
-.task-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
 .task-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+/* Tela de task completada */
+.task-completed .footer-task {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
 .btn-start {
   background: var(--background-button);
   border: none;
@@ -64,6 +77,12 @@
   align-self: right;
   cursor: pointer;
   font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-start:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 900px) {

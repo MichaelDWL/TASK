@@ -42,7 +42,8 @@ h1 {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: "Fira Sans", sans-serif;
   font-weight: bold;
 }
@@ -73,7 +74,7 @@ body {
 main {
   display: flex;
   width: 100%;
-  height: fit-content;
-  gap: 2rem;
+  /* height: fit-content; */
+  gap: 1.5rem;
   /* height: 3000px; */
 }

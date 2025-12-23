@@ -1,6 +1,7 @@
 .feedback {
   display: grid;
   grid-template-columns: 1fr;
+  width: 100%;
   margin: 2rem;
   gap: 2rem;
   /* justify-items: center; */
@@ -18,11 +19,18 @@
 }
 
 .feedback-item {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   background-color: var(--background-painel);
   padding: 2rem;
   border-radius: 8px;
   display: flex;
   gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.feedback-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
 .feedback-item-info {
@@ -32,7 +40,7 @@
 }
 
 .feedback-item-info p {
-  max-width: 80ch;
+  max-width: 60ch;
 }
 
 .feedback-item-info span {

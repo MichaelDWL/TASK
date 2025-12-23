@@ -1,6 +1,7 @@
 .modal-task {
   display: flex;
   justify-content: center;
+  /* align-items: center; */
   background: var(--background-painel);
   height: fit-content;
   padding: 25px;
