@@ -4,115 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedbacks</title>
+    <title>Tasks</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpj}." , crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./styles/feedback.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
+
 
 <body>
 
-    <body>
+    <header class="header">
+        <div class="header-container">
+            <h1> Task Manager </h1>
+            <!-- <a href="#">support</a> -->
 
-        <header>
-            <div class="header-container">
-                <h1> Task Manager </h1>
-        </header>
-        <main>
-            <nav class="menu">
+        </div>
+    </header>
 
-                <button class="close-menu" onclick="closeMenu()"> &times; </button>
+    <section class="seletores">
+        <div class="dropdown">
+            <div class="selected">Tarefas<i class="fa-solid fa-magnifying-glass"></i></div>
+            <div>
+                <ul class="options">
+                    <li>Todas</li>
+                    <li>Pendentes</li>
+                    <li>Em Execução</li>
+                    <li>Concluídas</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-                <div class="profile">
+    <main>
+        <nav class="menu">
 
-                    <img src="./assets/profile.png" alt="foto de perfil">
+            <button class="close-menu" onclick="closeMenu()"> &times; </button>
+
+            <div class="profile">
+
+                <img src="./assets/profile.png" alt="foto de perfil">
 
 
-                    <h1> User </h1>
+                <h1> User </h1>
 
-                    <div class="btn-nav">
-                        <button class="btn-opt">Inicio</button>
-                        <button class="btn-opt">Minhas tarefas</button>
-                        <button class="btn-opt">Tarefas Concluídas</button>
-                        <button class="btn-opt">Estatística</button>
-                        <button class="btn-opt">Feedbacks</button>
-                        <button class="btn-opt">Configurações</button>
-                        <button class="btn-opt">Conta</button>
-                    </div>
+                <ul class="btn-nav">
 
-                </div>
-            </nav>
+                    <li><a class="btn-opt" href="./index.html">Inicio</a></li>
+                    <li><a class="btn-opt" href="./">Minhas tarefas</a></li>
+                    <li><a class="btn-opt" href="./">Tarefas Concluídas</a></li>
+                    <li><a class="btn-opt" href="./">Estatística</a></li>
+                    <li><a class="btn-opt" href="./feedback.html">Feedbacks</a></li>
+                    <li><a class="btn-opt" href="">Configurações</a></li>
+                    <li><a class="btn-opt" href="">Conta</a></li>
+                </ul>
 
-            <section class="container-feedbacks">
-                <h1> Feedbacks </h1>
+            </div>
 
-                <div class="feedbacks">
-                    <div>
-                        <img src="./assets/profile.png" alt="Foto de perfil">
-                    </div>
-                    <div class="info-feedbacks">
-                        <h3> Nome </h3>
-                        <p> Setor </p>
-                        <p>
-                            Muito obrigado, por ter finalizado minha tarefa...está
-                            tudo de arcordo e funcionando normalmente. Aguardo o retorno para a instalação de
-                            um novo computador para otimizar os fluxos do setor.
+        </nav>
+
+        <div class="menu-collapsed">
+            <button class="open-menu" onclick="openMenu()"> &#9776; </button>
+        </div>
+
+        <section class="feedback">
+            <h2> Feedbacks</h2>
+            <ul class="feedback-container">
+                <li class="feedback-item">
+                    <img src="./assets/profile.png" alt="Foto de Perfil">
+                    <div class="feedback-item-info">
+                        <h3>Nome Colaborador</h3>
+                        <span>Setor</span>
+                        <p> Gostaria de agradecer por ajustar todos os ar condicionado do bloco
+                            ja havia tempo que estava bem abaixo da temperatura minima, ótimo trabalho da
+                            equipe de manutenção !
                         </p>
                     </div>
-                </div>
-
-                <div class="feedbacks">
-                    <div>
-                        <img src="./assets/profile.png" alt="Foto de perfil">
-                    </div>
-                    <div class="info-feedbacks">
-                        <h3> Nome </h3>
-                        <p> Setor </p>
-                        <p>
-                            Muito obrigado, por ter finalizado minha tarefa...está
-                            tudo de arcordo e funcionando normalmente. Aguardo o retorno para a instalação de
-                            um novo computador para otimizar os fluxos do setor.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="feedbacks">
-                    <div>
-                        <img src="./assets/profile.png" alt="Foto de perfil">
-                    </div>
-                    <div class="info-feedbacks">
-                        <h3> Nome </h3>
-                        <p> Setor </p>
-                        <p>
-                            Muito obrigado, por ter finalizado minha tarefa...está
-                            tudo de arcordo e funcionando normalmente. Aguardo o retorno para a instalação de
-                            um novo computador para otimizar os fluxos do setor.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="feedbacks">
-                    <div>
-                        <img src="./assets/profile.png" alt="Foto de perfil">
-                    </div>
-                    <div class="info-feedbacks">
-                        <h3> Nome </h3>
-                        <p> Setor </p>
-                        <p>
-                            Muito obrigado, por ter finalizado minha tarefa...está
-                            tudo de arcordo e funcionando normalmente. Aguardo o retorno para a instalação de
-                            um novo computador para otimizar os fluxos do setor.
-                        </p>
-                    </div>
-                </div>
+                </li>
 
 
-            </section>
-        </main>
+            </ul>
 
-        <script src="./js/feedback.js"> </script>
-    </body>
 
-</html>
+        </section>
+
+    </main>
+
+    <script src="./js/index.js"> </script>
 </body>
 
 </html>

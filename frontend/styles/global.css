@@ -10,8 +10,13 @@ a {
   text-decoration: none;
 }
 
+a:visited {
+  color: initial;
+}
+
 img {
   width: 100%;
+  height: auto;
 }
 
 ul {
@@ -49,6 +54,7 @@ p {
 h2 {
   margin-bottom: 15px;
   color: var(--color-text);
+  font-size: 1.4rem;
   /* text-align: center; */
 }
 
@@ -67,7 +73,7 @@ body {
 main {
   display: flex;
   width: 100%;
-  gap: 30px;
   height: fit-content;
+  gap: 2rem;
   /* height: 3000px; */
 }
