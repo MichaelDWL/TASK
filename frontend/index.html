@@ -37,37 +37,93 @@
             </div>
         </div>
     </section>
-
     <main>
-        <nav class="menu">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar_content">
+                <div class="user">
+                    <img src="./assets/profile.png" id="user_avatar" alt="Avatar">
 
-            <button class="close-menu" onclick="closeMenu()"> &times; </button>
+                    <p class="user_infos">
+                        <span class="item-description">
+                            Fabio de Melo
+                        </span>
+                        <span class="item-description">
+                            Aux Manutenção
+                        </span>
+                    </p>
+                </div>
 
-            <div class="profile">
+                <ul class="side_items">
 
-                <img src="./assets/profile.png" alt="foto de perfil">
+                    <li class="side-item active">
+                        <a href="./">
+                            <i class="fa-solid fa-home"></i>
+                            <span class="item-description">
+                                Início
+                            </span>
+                        </a>
+                    </li>
 
+                    <li class="side-item">
+                        <a href="#">
+                            <i class="fa-solid fa-bell"></i>
+                            <span class="item-description">
+                                Notificações
+                            </span>
+                        </a>
+                    </li>
 
-                <h1> User </h1>
+                    <li class="side-item">
+                        <a href="./finishTask.html">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span class="item-description">
+                                Minhas Tarefas
+                            </span>
+                        </a>
+                    </li>
 
-                <ul class="btn-nav">
+                    <li class="side-item">
+                        <a href="./feedback.html">
+                            <i class="fa-solid fa-comment-dots"></i>
+                            <span class="item-description">
+                                Feedbacks
+                            </span>
+                        </a>
+                    </li>
 
-                    <li><a class="btn-opt" href="./index.html">Inicio</a></li>
-                    <li><a class="btn-opt" href="./">Minhas tarefas</a></li>
-                    <li><a class="btn-opt" href="./finishTask.html">Tarefas Concluídas</a></li>
-                    <li><a class="btn-opt" href="./">Estatística</a></li>
-                    <li><a class="btn-opt" href="./feedback.html">Feedbacks</a></li>
-                    <li><a class="btn-opt" href="">Configurações</a></li>
-                    <li><a class="btn-opt" href="">Conta</a></li>
+                    <li class="side-item">
+                        <a href="#">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span class="item-description">
+                                Dashboard
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="side-item">
+                        <a href="./config.html">
+                            <i class="fa-solid fa-gear"></i>
+                            <span class="item-description">
+                                Configurações
+                            </span>
+                        </a>
+                    </li>
                 </ul>
 
+                <button class="open_btn" id="open_btn">
+                    <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+                </button>
             </div>
 
+            <div class="logout">
+                <button class="logout_btn">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="item-description">
+                        Logout
+                    </span>
+                </button>
+            </div>
         </nav>
-
-        <div class="menu-collapsed">
-            <button class="open-menu" onclick="openMenu()"> &#9776; </button>
-        </div>
 
         <section class="modal-task">
             <button class="close-modal" onclick="closeModal()">&times;</button>

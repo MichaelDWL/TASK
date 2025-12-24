@@ -31,6 +31,7 @@ ul {
   --border-green: #7ed957;
   --border-orange: #f39c12;
   --border-blue: hsl(234, 71%, 66%);
+  --select-itens: #4f46e5;
 }
 
 /* ----------------------- Titles ----------------------- */
@@ -66,6 +67,7 @@ h3 {
 body {
   font-family: Arial, sans-serif;
   background-color: var(--background);
+  height: 10000px;
   /* padding: 20px; */
   /* align-items: center; */
   /* gap: 20px; */
