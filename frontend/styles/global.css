@@ -67,7 +67,7 @@ h3 {
 body {
   font-family: Arial, sans-serif;
   background-color: var(--background);
-  height: 10000px;
+  /* height: 10000px; */
   /* padding: 20px; */
   /* align-items: center; */
   /* gap: 20px; */
