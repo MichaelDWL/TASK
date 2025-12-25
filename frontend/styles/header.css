@@ -21,7 +21,7 @@
 .header-list {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   padding: 10px;
   gap: 1.5rem;
 }
@@ -32,7 +32,8 @@
 
 .src-content {
   display: flex;
-  max-width: 900px;
+  align-items: center;
+  gap: 2rem;
 }
 .search {
   width: 100%;
@@ -42,7 +43,7 @@
   padding: 0.5rem 1rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .search {
     display: none;
   }
