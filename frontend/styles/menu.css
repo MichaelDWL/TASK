@@ -3,13 +3,14 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: var(--background-painel);
-  height: 70vh;
+  height: 80vh;
   border-radius: 0px 18px 18px 0px;
   position: sticky;
   top: 40px;
   transition: all 0.5s;
   min-width: 82px;
   z-index: 2;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
 .sidebar_content {
@@ -156,12 +157,18 @@
   }
 
   .open_btn {
-    top: 480px;
+    top: 430px;
   }
 
   .sidebar .user {
     width: 0px;
     overflow: hidden;
     height: 0px;
+  }
+}
+
+@media (max-width: 400px) {
+  .sidebar {
+    display: none;
   }
 }

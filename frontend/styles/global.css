@@ -37,8 +37,6 @@ ul {
 /* ----------------------- Titles ----------------------- */
 
 h1 {
-  color: var(--color-text);
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1,
@@ -76,7 +74,9 @@ body {
 main {
   display: flex;
   width: 100%;
-  /* height: fit-content; */
   gap: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /* height: fit-content; */
   /* height: 3000px; */
 }

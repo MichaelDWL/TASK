@@ -90,3 +90,17 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 600px) {
+  .task-card h3 {
+    font-size: 0.875rem;
+  }
+
+  .task-card p {
+    font-size: 0.875rem;
+  }
+
+  .times {
+    font-size: 0.7rem;
+  }
+}

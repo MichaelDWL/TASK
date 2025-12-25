@@ -3,7 +3,7 @@
 @import "./filtro.css ";
 @import "./task.css";
 @import "./header.css";
-@import "./modal-task";
+@import "./modal-task.css";
 @import "./feedback.css";
 /* ----------------------- MAIN ----------------------- */
 /* -------------------Footer do card -------------------*/
@@ -33,7 +33,7 @@
   color: gray;
 } */
 /* ----------------------- MODAL ----------------------- */
-.modal-task {
+/* .modal-task {
   display: flex;
   justify-content: center;
   background: var(--background-painel);
@@ -45,7 +45,6 @@
 }
 .modal-content {
   margin: 20px;
-  /* border: #333 1px solid; */
   padding: 20px;
 }
 
@@ -109,7 +108,7 @@
   opacity: 0.8;
   border-radius: 6px;
   cursor: pointer;
-}
+} */
 
 /* ----------------------- RESPONSIVIDADE ----------------------- */
 @media (max-width: 900px) {
