@@ -1,6 +1,5 @@
 import express from "express";
-
-const server = express();
+import app from "./app.js";
 
 /* Rotas 
 
