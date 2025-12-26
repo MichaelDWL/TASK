@@ -1,3 +1,5 @@
+import { formatDate } from "../utils/formatDate.js";
+
 export async function carregarTasks() {
   try {
     const response = await fetch("http://localhost:3000/tasks");
@@ -16,7 +18,7 @@ export async function carregarTasks() {
 
         <div class="task-footer">
           <span class="times">
-            ${formatarData(task.created_at)}
+            ${formatDate(task.created_at)}
           </span>
           <button class="btn-start">Iniciar</button>
         </div>
