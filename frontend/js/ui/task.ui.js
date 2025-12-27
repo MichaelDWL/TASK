@@ -1,11 +1,14 @@
 import { formatDate } from "../utils/formatDate.js";
 
-export async function carregarTasks() {
+const API_URL = "http://localhost:3000/tasks";
+
+// função genérica
+async function carregarPorStatus(endpoint, containerId) {
   try {
-    const response = await fetch("http://localhost:3000/tasks");
+    const response = await fetch(`${API_URL}/${endpoint}`);
     const tasks = await response.json();
 
-    const container = document.getElementById("task-container");
+    const container = document.getElementById(containerId);
     container.innerHTML = "";
 
     tasks.forEach((task) => {
@@ -20,13 +23,31 @@ export async function carregarTasks() {
           <span class="times">
             ${formatDate(task.created_at)}
           </span>
-          <button class="btn-start">Iniciar</button>
+
+          ${
+            endpoint === "pendentes"
+              ? `<button class="btn-start" data-id="${task.id}">Iniciar</button>`
+              : ""
+          }
         </div>
       `;
 
       container.appendChild(card);
     });
   } catch (error) {
-    console.error("Erro ao carregar tasks", error);
+    console.error(`Erro ao carregar tasks ${endpoint}`, error);
   }
+}
+
+// funções específicas (mais legível)
+export function carregarPendentes() {
+  carregarPorStatus("pendentes", "tasks-pendentes");
+}
+
+export function carregarEmExecucao() {
+  carregarPorStatus("execucao", "tasks-execucao");
+}
+
+export function carregarConcluidas() {
+  carregarPorStatus("concluidas", "tasks-concluidas");
 }

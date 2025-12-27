@@ -1,14 +1,37 @@
-import taskModel from "../models/task.model.js";
+import TaskModel from "../models/task.model.js";
 
-async function list(req, res) {
+async function listarPendentes(req, res) {
   try {
-    const tasks = await taskModel.findAll();
-    res.json(tasks);
+    const tasks = await TaskModel.findPendente();
+    res.status(200).json(tasks);
   } catch (error) {
-    res.status(500).json({ error: "Erro ao buscar tasks" });
+    console.error(error);
+    res.status(500).json({ erro: "Erro ao buscar tarefas pendentes" });
+  }
+}
+
+async function listarEmExecucao(req, res) {
+  try {
+    const tasks = await TaskModel.findExecutando();
+    res.status(200).json(tasks);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ erro: "Erro ao buscar tarefas em execução" });
+  }
+}
+
+async function listarConcluidas(req, res) {
+  try {
+    const tasks = await TaskModel.findConluidas();
+    res.status(200).json(tasks);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ erro: "Erro ao buscar tarefas concluídas" });
   }
 }
 
 export default {
-  list,
+  listarPendentes,
+  listarEmExecucao,
+  listarConcluidas,
 };

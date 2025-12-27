@@ -163,104 +163,23 @@
         </section>
 
         <section class="task">
-            <section class="task-pending" aria-label="Tarefas Pendentes" data-status="Pendentes">
 
+            <section class="task-pending" data-status="Pendentes">
                 <h2>Tarefas Pendentes</h2>
-                <div id="task-container" class="task-container">
-
-
-                    <!--  <div class="task-card">
-                        <h3> Nome do Solicitante </h3>
-                        <p>
-                            O vaso do banheiro da CAF, está quebrado...gostaria de
-                            solicitar o reparo
-                        </p>
-                        <div class="task-footer">
-                            <span class="times"> 17:00 - 22/11/25 </span>
-                            <button class="btn-start" onclick="openModal()">Iniciar</button>
-                        </div>
-                    </div>
-
-                    <div class="task-card">
-                        <h3>Nome do Solicitante </h3>
-                        <p>Descrição da tarefa 2</p>
-
-                        <div class="task-footer">
-                            <span class="times"> 17:00 - 22/11/25 </span>
-                            <button class="btn-start" onclick="openModal()">Iniciar</button>
-                        </div>
-                    </div>
-
-                    <div class="task-card">
-                        <h3>Nome do Solicitante </h3>
-                        <p>Descrição da tarefa 3</p>
-                        <div class="task-footer">
-                            <span class="times"> 17:00 - 22/11/25 </span>
-                            <button class="btn-start" onclick="openModal()">Iniciar</button>
-                        </div>
-                    </div>
-                </div> -->
-            </section>
-            <!-- 
-            <section class="task-working" aria-label="Tarefas em Execução" data-status="Em Execução">
-
-                <h2> Tarefas em Execução </h2>
-
-                <div class="task-container">
-                    <div class="task-card">
-                        <h3>Colaborador</h3>
-                        <p> O vaso do banheiro da CAF, está quebrado...gostaria de
-                            solicitar o reparo </p>
-                        <p class="times">Início: 14:00 - 14/02/2025 </p>
-                    </div>
-                    <div class="task-card">
-                        <h3>Colaborador</h3>
-                        <p>Descrição da tarefa 2</p>
-                        <p class="times">Início: 14:00 - 14/02/2025</p>
-                    </div>
-                    <div class="task-card">
-                        <h3>Colaborador</h3>
-                        <p>Descrição da tarefa 3</p>
-                        <p class="times">Início: 14:00 - 14/02/2025</p>
-                    </div>
-                </div>
-
+                <div id="tasks-pendentes" class="task-container"></div>
             </section>
 
-            <section class="task-completed" aria-label="Tarefas Concluídas" data-status="Concluídas">
-
-                <h2> Tarefas Concluídas </h2>
-
-                <div class="task-container">
-                    <div class="task-card">
-                        <h3>Solicitante</h3>
-                        <h4>Setor</h4>
-                        <p> O vaso do banheiro da CAF, está quebrado...gostaria de
-                            solicitar o reparo</p>
-                        <div class="footer-task">
-                            <span class="times"> 17:00 - 22/11/25 </span>
-                        </div>
-                    </div>
-                    <div class="task-card">
-                        <h3>Solicitante</h3>
-                        <h4>Setor</h4>
-                        <p>Resumo da tarefa </p>
-                        <div class="footer-task">
-                            <span class="times"> 17:00 - 22/11/25 </span>
-                        </div>
-                    </div>
-                    <div class="task-card">
-                        <h3>Solicitante</h3>
-                        <h4>Setor</h4>
-                        <p>Resumo da tarefa </p>
-                        <div class="footer-task">
-                            <span class="times"> 17:00 - 22/11/25 </span>
-                        </div>
-                    </div>
-                </div>
-
+            <section class="task-working" data-status="Em Execução">
+                <h2>Tarefas em Execução</h2>
+                <div id="tasks-execucao" class="task-container"></div>
             </section>
-        </section>  -->
+
+            <section class="task-completed" data-status="Concluídas">
+                <h2>Tarefas Concluídas</h2>
+                <div id="tasks-concluidas" class="task-container"></div>
+            </section>
+
+        </section>
     </main>
 
     <script type="module" src="./js/main.js"></script>
