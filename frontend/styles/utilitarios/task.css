@@ -27,7 +27,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   gap: 1rem;
   border-right: 4px solid var(--border-green);
-  border-bottom: 4px solid var(--border-green);
+  /* border-bottom: 4px solid var(--border-green); */
   transition: all 0.3s ease;
 }
 
@@ -42,12 +42,12 @@
 
 .task-working .task-card {
   border-right: 4px solid var(--border-orange);
-  border-bottom: 4px solid var(--border-orange);
+  /* border-bottom: 4px solid var(--border-orange); */
 }
 
 .task-completed .task-card {
   border-right: 4px solid var(--border-blue);
-  border-bottom: 4px solid var(--border-blue);
+  /* border-bottom: 4px solid var(--border-blue); */
 }
 
 .times {

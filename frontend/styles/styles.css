@@ -1,7 +1,12 @@
+/* Global */
 @import "./global/global.css ";
 @import "./global/menu.css ";
 @import "./global/header.css";
+
+/* UTILITARIOS */
 @import "./utilitarios/filtro.css ";
-@import "./task.css";
-@import "./modal-task.css";
-@import "./feedback.css";
+@import "./utilitarios/task.css";
+@import "./utilitarios/modal-task.css";
+
+/* HOME */
+@import "./home/feedback.css";
