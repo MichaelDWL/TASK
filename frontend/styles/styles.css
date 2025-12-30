@@ -7,6 +7,10 @@
 @import "./utilitarios/filtro.css ";
 @import "./utilitarios/task.css";
 @import "./utilitarios/modal-task.css";
+@import "./utilitarios/color.css";
+@import "./utilitarios/componentes.css";
+@import "./utilitarios/tipografia.css";
+@import "./utilitarios/card.css";
 
 /* HOME */
 @import "./home/feedback.css";

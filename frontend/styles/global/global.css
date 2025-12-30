@@ -6,7 +6,6 @@
 }
 
 a {
-  font-family: "Fira Sans", sans-serif;
   text-decoration: none;
 }
 
@@ -23,60 +22,36 @@ ul {
   list-style: none;
 }
 
-:root {
-  --background: #dee4f5;
-  --background-painel: #ffffff;
-  --background-button: #f2f2f2;
-  --color-text: #333;
-  --border-green: #7ed957;
-  --border-orange: #f39c12;
-  --border-blue: hsl(234, 71%, 66%);
-  --select-itens: #4f46e5;
-}
-
 /* ----------------------- Titles ----------------------- */
 
-h1 {
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Fira Sans", sans-serif;
-  font-weight: bold;
-}
-
-p {
-  font-family: "Fira Sans", sans-serif;
-}
-
 h2 {
-  margin-bottom: 15px;
   color: var(--color-text);
   font-size: 1.4rem;
   /* text-align: center; */
 }
 
-h3 {
-  font-size: 1.1rem;
-}
-
 body {
-  font-family: Arial, sans-serif;
   background-color: var(--background);
-  /* height: 10000px; */
-  /* padding: 20px; */
-  /* align-items: center; */
-  /* gap: 20px; */
 }
 
-main {
+.layout {
   display: flex;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 2rem;
+  gap: 2rem;
+}
+
+.main {
   width: 100%;
-  gap: 1.5rem;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  /* height: fit-content; */
-  /* height: 3000px; */
+  flex: 1;
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
 }

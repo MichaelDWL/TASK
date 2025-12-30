@@ -1,0 +1,45 @@
+.font-m-desc {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  max-width: 40ch;
+}
+
+.font-m-t {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.1;
+}
+
+.font-l-t {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.times {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  line-height: 1.2;
+  font-weight: 400;
+  color: grey;
+}
+
+@media (max-width: 600px) {
+  .font-m-t {
+    font-size: 0.875rem;
+  }
+
+  .font-l-t {
+    font-size: 1.2rem;
+  }
+
+  .font-m-desc {
+    font-size: 0.875rem;
+  }
+
+  .times {
+    font-size: 0.7rem;
+  }
+}

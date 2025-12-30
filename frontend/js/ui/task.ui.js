@@ -13,11 +13,11 @@ async function carregarPorStatus(endpoint, containerId) {
 
     tasks.forEach((task) => {
       const card = document.createElement("div");
-      card.classList.add("task-card");
+      card.classList.add("card");
 
       card.innerHTML = `
-        <h3>${task.nome_colaborador}</h3>
-        <p>${task.descricao}</p>
+        <h3 class="font-m-t">${task.nome_colaborador}</h3>
+        <p class="font-m-desc">${task.descricao}</p>
 
         <div class="task-footer">
           <span class="times">
@@ -26,7 +26,7 @@ async function carregarPorStatus(endpoint, containerId) {
 
           ${
             endpoint === "pendentes"
-              ? `<button class="btn-start" data-id="${task.id}">Iniciar</button>`
+              ? `<button class="button-1" data-id="${task.id}">Iniciar</button>`
               : ""
           }
         </div>

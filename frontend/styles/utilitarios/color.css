@@ -1,0 +1,15 @@
+:root {
+  --background: #dee4f5;
+  --background-painel: #ffffff;
+  --background-button: #f2f2f2;
+  --color-text: #333;
+  --border-green: #7ed957;
+  --border-orange: #f39c12;
+  --border-blue: hsl(234, 71%, 66%);
+  --select-itens: #4f46e5;
+  --h-color: #111827;
+}
+
+.c-h {
+  color: var(--h-color);
+}

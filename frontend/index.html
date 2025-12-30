@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpj}." , crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles.css">
+
 </head>
 
 
@@ -31,156 +32,159 @@
         </div>
     </header>
 
-    <section class="seletores">
-        <div class="dropdown">
-            <div class="selected">Tarefas<i class="fa-solid fa-magnifying-glass"></i></div>
-            <div>
-                <ul class="options">
-                    <li>Todas</li>
-                    <li>Pendentes</li>
-                    <li>Em Execução</li>
-                    <li>Concluídas</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <main>
-        <nav class="sidebar" id="sidebar">
-            <div class="sidebar_content">
-                <div class="user">
-                    <img src="./assets/profile.png" id="user_avatar" alt="Avatar">
+    <div class="layout">
+        <aside class="sidebar-container">
+            <nav class="sidebar" id="sidebar" aria-label="Menu Lateral">
+                <div class="sidebar_content">
+                    <div class="user">
 
-                    <div class="user_infos">
-                        <span class="item-description">
-                            Fabio de Melo
-                        </span>
-                        <span class="item-description">
-                            Aux Manutenção
-                        </span>
+                        <img src="./assets/profile.png" id="user_avatar" alt="Avatar">
+
+                        <div class="user_infos">
+                            <span class="item-description">
+                                Fabio de Melo
+                            </span>
+                            <span class="item-description">
+                                Aux Manutenção
+                            </span>
+                        </div>
                     </div>
-                </div>
 
-                <ul class="side_items">
+                    <ul class="side_item">
 
-                    <li class="side-item active">
-                        <a href="./">
-                            <i class="fa-solid fa-home"></i>
-                            <span class="item-description">
-                                Início
-                            </span>
-                        </a>
-                    </li>
-
-                    <li class="side-item">
-                        <a href="#">
-                            <i class="fa-solid fa-bell"></i>
-                            <span class="item-description">
-                                Notificações
-                            </span>
-                        </a>
-                    </li>
-
-                    <li class="side-item">
-                        <a href="./finishTask.html">
-                            <i class="fa-solid fa-calendar-check"></i>
-                            <span class="item-description">
-                                Minhas Tarefas
-                            </span>
-                        </a>
-                    </li>
-
-                    <li class="side-item">
-                        <a href="./feedback.html">
-                            <i class="fa-solid fa-comment-dots"></i>
-                            <span class="item-description">
-                                Feedbacks
-                            </span>
-                        </a>
-                    </li>
-
-                    <li class="side-item">
-                        <a href="./dashboard.html">
-                            <i class="fa-solid fa-chart-line"></i>
-                            <span class="item-description">
-                                Dashboard
-                            </span>
-                        </a>
-                    </li>
-
-                    <li class="side-item">
-                        <a href="./config.html">
-                            <i class="fa-solid fa-gear"></i>
-                            <span class="item-description">
-                                Configurações
-                            </span>
-                        </a>
-                    </li>
-                </ul>
-
-                <button class="open_btn" id="open_btn">
-                    <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
-                </button>
-            </div>
-
-            <div class="logout">
-                <button class="logout_btn">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <span class="item-description">
-                        Logout
-                    </span>
-                </button>
-            </div>
-        </nav>
-
-        <section class="modal-task">
-            <button class="close-modal" onclick="closeModal()">&times;</button>
-
-            <div class="modal-content">
-                <h3>Detalhes da Tarefa</h3>
-                <div class="info-task">
-                    <ul>
-                        <li>
-                            <p>Solicitante: </p>
+                        <li class="side-item active">
+                            <a href="./">
+                                <i class="fa-solid fa-home"></i>
+                                <span class="item-description">
+                                    Início
+                                </span>
+                            </a>
                         </li>
-                        <li>
-                            <p>Local: </p>
+
+                        <li class="side-item">
+                            <a href="#">
+                                <i class="fa-solid fa-bell"></i>
+                                <span class="item-description">
+                                    Notificações
+                                </span>
+                            </a>
                         </li>
-                        <li>
-                            <p>Descrição:</p>
+
+                        <li class="side-item">
+                            <a href="./finishTask.html">
+                                <i class="fa-solid fa-calendar-check"></i>
+                                <span class="item-description">
+                                    Minhas Tarefas
+                                </span>
+                            </a>
                         </li>
-                        <li class="info-task-desc">
-                            <p>Aqui estão os detalhes da tarefa selecionada. Aqui estão os detalhes da tarefa selecionada.Aqui estão os detalhes da tarefa selecionada.</p>
+
+                        <li class="side-item">
+                            <a href="./feedback.html">
+                                <i class="fa-solid fa-comment-dots"></i>
+                                <span class="item-description">
+                                    Feedbacks
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="side-item">
+                            <a href="./dashboard.html">
+                                <i class="fa-solid fa-chart-line"></i>
+                                <span class="item-description">
+                                    Dashboard
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="side-item">
+                            <a href="./config.html">
+                                <i class="fa-solid fa-gear"></i>
+                                <span class="item-description">
+                                    Configurações
+                                </span>
+                            </a>
                         </li>
                     </ul>
 
-                    <div class="footer-modal">
-                        <button class="btn-confirm">Confirmar Início</button>
-                    </div>
-
+                    <button class="open_btn" id="open_btn">
+                        <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
-            </div>
-        </section>
 
-        <section class="task">
+                <div class="logout">
+                    <button class="logout_btn">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="item-description">
+                            Logout
+                        </span>
+                    </button>
+                </div>
+            </nav>
+        </aside>
 
-            <section class="task-pending" data-status="Pendentes">
-                <h2>Tarefas Pendentes</h2>
-                <div id="tasks-pendentes" class="task-container"></div>
+        <main class="main">
+            <section class="seletores">
+                <div class="dropdown">
+                    <div class="selected">Tarefas<i class="fa-solid fa-magnifying-glass"></i></div>
+                    <div>
+                        <ul class="options">
+                            <li>Todas</li>
+                            <li>Pendentes</li>
+                            <li>Em Execução</li>
+                            <li>Concluídas</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
 
-            <section class="task-working" data-status="Em Execução">
-                <h2>Tarefas em Execução</h2>
-                <div id="tasks-execucao" class="task-container"></div>
+            <section class="modal-task">
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+
+                <div class="modal-content">
+                    <h3>Detalhes da Tarefa</h3>
+                    <div class="info-task">
+                        <ul>
+                            <li>
+                                <p>Solicitante: </p>
+                            </li>
+                            <li>
+                                <p>Local: </p>
+                            </li>
+                            <li>
+                                <p>Descrição:</p>
+                            </li>
+                            <li class="info-task-desc">
+                                <p>Aqui estão os detalhes da tarefa selecionada. Aqui estão os detalhes da tarefa selecionada.Aqui estão os detalhes da tarefa selecionada.</p>
+                            </li>
+                        </ul>
+
+                        <div class="footer-modal">
+                            <button class="btn-confirm">Confirmar Início</button>
+                        </div>
+
+                    </div>
+                </div>
             </section>
 
-            <section class="task-completed" data-status="Concluídas">
-                <h2>Tarefas Concluídas</h2>
-                <div id="tasks-concluidas" class="task-container"></div>
-            </section>
+            <article class="container">
+                <section class="task-pending" data-status="Pendentes">
+                    <h2 class="font-l-t c-h">Tarefas Pendentes</h2>
+                    <div id="tasks-pendentes" class="card-container"></div>
+                </section>
 
-        </section>
-    </main>
+                <section class="task-working" data-status="Em Execução">
+                    <h2 class="font-l-t c-h">Tarefas em Execução</h2>
+                    <div id="tasks-execucao" class="task-container"></div>
+                </section>
 
+                <section class="task-completed" data-status="Concluídas">
+                    <h2 class="font-l-t c-h">Tarefas Concluídas</h2>
+                    <div id="tasks-concluidas" class="task-container"></div>
+                </section>
+            </article>
+        </main>
+    </div>
     <script type="module" src="./js/main.js"></script>
 </body>
 

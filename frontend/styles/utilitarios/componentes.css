@@ -1,0 +1,15 @@
+.button-1 {
+  background: var(--background-button);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  align-self: right;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.button-1:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
