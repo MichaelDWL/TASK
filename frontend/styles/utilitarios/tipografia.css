@@ -11,6 +11,13 @@
   line-height: 1.1;
 }
 
+.font-m-s {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.1;
+}
+
 .font-l-t {
   font-family: "Roboto", sans-serif;
   font-weight: 800;

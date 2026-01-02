@@ -10,8 +10,14 @@
 .task-pending {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 }
+
+.task-working h2,
+.task-completed h2,
+.task-pending h2 {
+  margin-bottom: 1.5rem;
+}
+
 .task-completed .card {
   border-right: 4px solid var(--border-blue);
 }
