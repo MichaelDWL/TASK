@@ -1,5 +1,5 @@
 .font-m-desc {
-  font-family: "Inter", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   max-width: 40ch;
 }
@@ -18,6 +18,13 @@
   line-height: 1.1;
 }
 
+.font-m-s-bold {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 0.6rem;
+  line-height: 1.1;
+}
+
 .font-l-t {
   font-family: "Roboto", sans-serif;
   font-weight: 800;
@@ -33,7 +40,13 @@
   color: grey;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
+  .font-l-t {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 800px) {
   .font-m-t {
     font-size: 0.875rem;
   }
