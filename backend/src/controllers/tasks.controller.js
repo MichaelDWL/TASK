@@ -2,7 +2,8 @@ import TaskModel from "../models/task.model.js";
 
 async function listarPendentes(req, res) {
   try {
-    const tasks = await TaskModel.findPendente();
+    const sortBy = req.query.sortBy || "data-desc";
+    const tasks = await TaskModel.findPendente(sortBy);
     res.status(200).json(tasks);
   } catch (error) {
     console.error(error);
@@ -12,7 +13,8 @@ async function listarPendentes(req, res) {
 
 async function listarEmExecucao(req, res) {
   try {
-    const tasks = await TaskModel.findExecutando();
+    const sortBy = req.query.sortBy || "data-desc";
+    const tasks = await TaskModel.findExecutando(sortBy);
     res.status(200).json(tasks);
   } catch (error) {
     console.error(error);
@@ -22,7 +24,8 @@ async function listarEmExecucao(req, res) {
 
 async function listarConcluidas(req, res) {
   try {
-    const tasks = await TaskModel.findConluidas();
+    const sortBy = req.query.sortBy || "data-desc";
+    const tasks = await TaskModel.findConluidas(sortBy);
     res.status(200).json(tasks);
   } catch (error) {
     console.error(error);

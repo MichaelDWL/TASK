@@ -1,6 +1,7 @@
 import { initSidebar } from "./ui/menu.ui.js";
 import { openModal, closeModal } from "./ui/modal.ui.js";
 import { initFiltro } from "./ui/filtro.ui.js";
+import { initSort } from "./ui/sort.ui.js";
 import {
   carregarPendentes,
   carregarEmExecucao,
@@ -10,6 +11,7 @@ import {
 document.addEventListener("DOMContentLoaded", () => {
   initSidebar();
   initFiltro();
+  initSort();
   carregarPendentes();
   carregarEmExecucao();
   carregarConcluidas();

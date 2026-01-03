@@ -1,0 +1,48 @@
+.card p {
+  margin-bottom: 30px;
+}
+
+.task-working .card {
+  border-right: 4px solid var(--border-orange);
+}
+.task-working,
+.task-completed,
+.task-pending {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-completed .card {
+  border-right: 4px solid var(--border-blue);
+}
+
+.urgencia-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.urgencia-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Cores de urgência */
+.urgencia-alta .urgencia-value {
+  color: #dc3545; /* Vermelho */
+}
+
+.urgencia-media .urgencia-value {
+  color: #ffa500; /* Laranja claro/quase amarelo */
+}
+
+.urgencia-baixa .urgencia-value {
+  color: #007bff; /* Azul */
+}
+
+.task-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

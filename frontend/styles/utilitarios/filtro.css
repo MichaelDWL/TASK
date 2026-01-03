@@ -61,6 +61,7 @@
 }
 .selected:hover {
   background-color: rgba(77, 79, 84, 0.5);
+  transition: all 0.3s ease;
 }
 /* ---------------------- ANIMAÇÕES DO FILTRO ---------------------- */
 
@@ -86,14 +87,4 @@
   .options {
     max-width: 200px;
   }
-}
-
-/* Classificador */
-
-.filter-class {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 20px 20px 0px;
-  border: solid 1px black;
 }

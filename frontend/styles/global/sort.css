@@ -1,0 +1,101 @@
+/* ----------------------- Filtro de Ordenação por Coluna ----------------------- */
+
+.section-header {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+  position: relative;
+}
+
+.filter-class {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.btn-class {
+  display: flex;
+  align-items: center;
+  /* gap: 8px; */
+  padding: 8px 16px;
+  background: var(--background-painel);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-class:hover {
+  background: rgba(77, 79, 84, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-class i {
+  font-size: 0.9rem;
+}
+
+.btn-class.active {
+  gap: 8px;
+}
+
+.sort-options {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  list-style: none;
+  padding: 8px 0;
+  min-width: 200px;
+  display: none;
+  z-index: 100;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.sort-options.active {
+  display: block;
+}
+
+.sort-options li {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.sort-options li:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.sort-options li.active {
+  background-color: rgba(77, 79, 84, 0.1);
+  font-weight: 600;
+}
+
+/* ---------------------- ANIMAÇÕES DO FILTRO ---------------------- */
+
+@media (max-width: 768px) {
+  .section-header {
+    gap: 10px;
+  }
+
+  .section-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .btn-class {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .filter-class {
+    width: auto;
+  }
+}

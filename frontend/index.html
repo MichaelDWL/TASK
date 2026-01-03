@@ -33,8 +33,10 @@
     </header>
 
     <div class="layout">
+        <!-- Menu Lateral -->
         <aside class="sidebar-container">
             <nav class="sidebar" id="sidebar" aria-label="Menu Lateral">
+
                 <div class="sidebar_content">
                     <div class="user">
 
@@ -119,10 +121,12 @@
                         </span>
                     </button>
                 </div>
+
             </nav>
         </aside>
 
         <main class="main">
+            <!-- Seletores -->
             <section class="seletores container">
 
                 <div class="dropdown">
@@ -143,29 +147,104 @@
                 </div>
             </section>
 
+            <!-- Tarefas -->
             <article class="container">
                 <section class="task-pending" data-status="Pendentes">
-                    <h2 class="font-l-t c-h">Tarefas Pendentes</h2>
-
-                    <!-- <div class="filter-class">
-                        <button class="btn-class"> </button>
-                    </div> -->
-
-
+                    <div class="section-header">
+                        <h2 class="font-l-t c-h">Tarefas Pendentes</h2>
+                        <div class="filter-class">
+                            <button class="btn-class" data-column="pendentes">
+                                <span class="sort-label font-m-s-bold"></span>
+                                <i class="fa-solid fa-sort"></i>
+                            </button>
+                            <ul class="sort-options font-m-s-bold" data-column="pendentes">
+                                <li data-sort="data-desc">Data (Recente)</li>
+                                <li data-sort="data-asc">Data (Antiga)</li>
+                                <li data-sort="nome-asc">Nome (A-Z)</li>
+                                <li data-sort="nome-desc">Nome (Z-A)</li>
+                                <li data-sort="descricao-asc">Descrição (A-Z)</li>
+                                <li data-sort="descricao-desc">Descrição (Z-A)</li>
+                                <li data-sort="setor-asc">Setor (A-Z)</li>
+                                <li data-sort="urgencia-desc">Prioridade (Alta-baixa)</li>
+                            </ul>
+                        </div>
+                    </div>
 
                     <div id="tasks-pendentes" class="card-container"></div>
                 </section>
 
                 <section class="task-working" data-status="Em Execução">
-                    <h2 class="font-l-t c-h">Tarefas em Execução</h2>
-                    <div id="tasks-execucao" class="task-container"></div>
+                    <div class="section-header">
+                        <h2 class="font-l-t c-h">Tarefas em Execução</h2>
+                        <div class="filter-class">
+                            <button class="btn-class" data-column="execucao">
+                                <span class="sort-label font-m-s-bold"></span>
+                                <i class="fa-solid fa-sort"></i>
+                            </button>
+                            <ul class="sort-options font-m-s-bold" data-column="execucao">
+                                <li data-sort="data-desc">Data (Recente)</li>
+                                <li data-sort="data-asc">Data (Antiga)</li>
+                                <li data-sort="nome-asc">Nome (A-Z)</li>
+                                <li data-sort="nome-desc">Nome (Z-A)</li>
+                                <li data-sort="descricao-asc">Descrição (A-Z)</li>
+                                <li data-sort="descricao-desc">Descrição (Z-A)</li>
+                                <li data-sort="setor-asc">Setor (A-Z)</li>
+                                <li data-sort="urgencia-desc">Prioridade (Alta-baixa)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="tasks-execucao" class="card-container"></div>
                 </section>
 
                 <section class="task-completed" data-status="Concluídas">
-                    <h2 class="font-l-t c-h">Tarefas Concluídas</h2>
-                    <div id="tasks-concluidas" class="task-container"></div>
+                    <div class="section-header">
+                        <h2 class="font-l-t c-h">Tarefas Concluídas</h2>
+                        <div class="filter-class">
+                            <button class="btn-class" data-column="concluidas">
+                                <span class="sort-label font-m-s-bold"></span>
+                                <i class="fa-solid fa-sort"></i>
+                            </button>
+                            <ul class="sort-options font-m-s-bold" data-column="concluidas">
+                                <li data-sort="data-desc">Data (Recente)</li>
+                                <li data-sort="data-asc">Data (Antiga)</li>
+                                <li data-sort="nome-asc">Nome (A-Z)</li>
+                                <li data-sort="nome-desc">Nome (Z-A)</li>
+                                <li data-sort="descricao-asc">Descrição (A-Z)</li>
+                                <li data-sort="descricao-desc">Descrição (Z-A)</li>
+                                <li data-sort="setor-asc">Setor (A-Z)</li>
+                                <li data-sort="urgencia-desc">Prioridade (Alta-baixa)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="tasks-concluidas" class="card-container"></div>
                 </section>
             </article>
+
+            <!-- Modal de iniciar tarefa -->
+            <div class="modal-task container">
+
+                <div class="modal-start-task">
+
+                    <h3 class="font-l-t c-h">Iniciar Tarefa</h3>
+
+                    <div class="modal-form">
+                        <div class="card">
+                            <h3 class="font-m-t c-h">Nome do colaborador</h3>
+                            <span class="font-m-desc">Setor</span>
+                            <p class="font-m-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                            <div class="task-urgencia">
+                                <span class="urgencia-label">Prioridade:</span>
+                                <span class="urgencia-value">Alta</span>
+                            </div>
+                            <div class="task-footer">
+                                <span class="times">20/01/2026</span>
+                                <button class="button-1">Iniciar</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
     <script type="module" src="./js/main.js"></script>

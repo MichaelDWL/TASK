@@ -2,11 +2,14 @@
 @import "./global/global.css ";
 @import "./global/menu.css ";
 @import "./global/header.css";
+@import "./global/sort.css";
+
+/* TASK */
+@import "./task/modal-task.css";
+@import "./task/task.css";
 
 /* UTILITARIOS */
 @import "./utilitarios/filtro.css ";
-@import "./utilitarios/task.css";
-@import "./utilitarios/modal-task.css";
 @import "./utilitarios/color.css";
 @import "./utilitarios/componentes.css";
 @import "./utilitarios/tipografia.css";
