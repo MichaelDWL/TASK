@@ -8,8 +8,13 @@
   --border-blue: hsl(234, 71%, 66%);
   --select-itens: #4f46e5;
   --h-color: #111827;
+  --red-color: #dc3545;
 }
 
 .c-h {
   color: var(--h-color);
+}
+
+.c-danger {
+  color: var(--red-color);
 }

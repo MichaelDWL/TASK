@@ -7,6 +7,7 @@ import {
   carregarEmExecucao,
   carregarConcluidas,
 } from "./ui/task.ui.js";
+import { initSearch } from "./ui/search.ui.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initSidebar();
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   carregarPendentes();
   carregarEmExecucao();
   carregarConcluidas();
+  initSearch();
   // Expor funções globais (se usar onclick="")
   window.openModal = openModal;
   window.closeModal = closeModal;

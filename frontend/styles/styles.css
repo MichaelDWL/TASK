@@ -1,6 +1,6 @@
 /* Global */
-@import "./global/global.css ";
-@import "./global/menu.css ";
+@import "./global/global.css";
+@import "./global/menu.css";
 @import "./global/header.css";
 @import "./global/sort.css";
 
@@ -9,7 +9,7 @@
 @import "./task/task.css";
 
 /* UTILITARIOS */
-@import "./utilitarios/filtro.css ";
+@import "./utilitarios/filtro.css";
 @import "./utilitarios/color.css";
 @import "./utilitarios/componentes.css";
 @import "./utilitarios/tipografia.css";
@@ -18,3 +18,6 @@
 /* HOME */
 @import "./home/feedback.css";
 @import "./home/home.css";
+
+/* LOGIN */
+@import "./login/login.css";
