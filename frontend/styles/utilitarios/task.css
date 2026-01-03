@@ -12,11 +12,11 @@
   flex-direction: column;
 }
 
-.task-working h2,
+/* .task-working h2,
 .task-completed h2,
 .task-pending h2 {
   margin-bottom: 1.5rem;
-}
+} */
 
 .task-completed .card {
   border-right: 4px solid var(--border-blue);
