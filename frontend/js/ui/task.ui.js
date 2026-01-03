@@ -1,4 +1,5 @@
 import { formatDate } from "../utils/formatDate.js";
+import { openModal } from "./modal.ui.js";
 
 const API_URL = "http://localhost:3000/tasks";
 
@@ -101,6 +102,17 @@ async function carregarPorStatus(endpoint, containerId, sortBy = "data-desc") {
         container.appendChild(card);
       });
 
+      // Adicionar listeners nos botões "Iniciar"
+      if (endpoint === "pendentes") {
+        const buttons = container.querySelectorAll(".button-1");
+        buttons.forEach((button) => {
+          button.addEventListener("click", async (e) => {
+            const taskId = button.getAttribute("data-id");
+            await abrirModalTask(taskId);
+          });
+        });
+      }
+
       // Aplicar fade-in após adicionar os cards
       setTimeout(() => {
         const newCards = container.querySelectorAll(".card");
@@ -112,6 +124,17 @@ async function carregarPorStatus(endpoint, containerId, sortBy = "data-desc") {
     }, 500);
   } catch (error) {
     console.error(`Erro ao carregar tasks ${endpoint}`, error);
+  }
+}
+
+// Função para buscar task e abrir modal
+async function abrirModalTask(taskId) {
+  try {
+    const response = await fetch(`${API_URL}/${taskId}`);
+    const taskData = await response.json();
+    openModal(taskData);
+  } catch (error) {
+    console.error("Erro ao buscar task:", error);
   }
 }
 

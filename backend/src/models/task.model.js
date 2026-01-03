@@ -1,5 +1,40 @@
 import pool from "../config/db.js";
 
+async function findById(id) {
+  const [rows] = await pool.query(
+    `
+    SELECT 
+      tasks.id,
+      tasks.nome_colaborador,
+      tasks.descricao,
+      tasks.created_at,
+      tasks.urgencia,
+      tasks.setor_id,
+      setores.nome AS setor
+    FROM tasks
+    LEFT JOIN setores ON tasks.setor_id = setores.id
+    WHERE tasks.id = ?
+  `,
+    [id]
+  );
+
+  return rows[0] || null;
+}
+
+async function iniciarTask(id) {
+  const [result] = await pool.query(
+    `
+    UPDATE tasks 
+    SET status = 'em_execucao', 
+        inicio_execucao = NOW()
+    WHERE id = ? AND status = 'pendente'
+  `,
+    [id]
+  );
+
+  return result.affectedRows > 0;
+}
+
 // Função auxiliar para construir ORDER BY
 function buildOrderBy(sortBy = "data-desc") {
   const [field, direction] = sortBy.split("-");
@@ -100,4 +135,6 @@ export default {
   findPendente,
   findExecutando,
   findConluidas,
+  findById,
+  iniciarTask,
 };
