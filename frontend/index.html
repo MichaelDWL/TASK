@@ -17,10 +17,18 @@
 <body>
     <header class="header">
         <div class="header-container">
-            <a class="header-logo" href="./">
-                <i class="fa-solid fa-tasks"></i>
-                <h1> Task Manager </h1>
-            </a>
+            <!-- Botão de menu para mobile (no header) -->
+            <button class="header-menu-btn" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+                <span class="font-m-s">Menu</span>
+            </button>
+            <div class="header-logo-container">
+                <a class="header-logo" href="./">
+                    <i class="fa-solid fa-tasks"></i>
+                    <h1> Task Manager </h1>
+                </a>
+            </div>
+
 
             <div class="src-content">
                 <div class="search-wrapper">
@@ -38,6 +46,7 @@
     </header>
 
     <div class="layout">
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
         <!-- Menu Lateral -->
         <aside class="sidebar-container">
             <nav class="sidebar" id="sidebar" aria-label="Menu Lateral">

@@ -180,7 +180,7 @@ export function initSearch() {
   });
 
   // Limpar ao perder foco (opcional - você pode remover se quiser manter os highlights)
-  // input.addEventListener("blur", () => {
-  //   setTimeout(() => clearHighlights(), 200);
-  // });
+  //   input.addEventListener("blur", () => {
+  //     setTimeout(() => clearHighlights(), 200);
+  //   });
 }
