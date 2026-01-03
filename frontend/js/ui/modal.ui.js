@@ -4,6 +4,8 @@ const taskSections = document.querySelectorAll("[data-status]");
 const modalConfirm = document.getElementById("modal-confirm");
 let currentTaskId = null; // Armazenar ID da task atual
 
+import { iniciarTask } from "../api/task.api.js";
+
 // Inicializar listeners
 export function initCloseButton() {
   const closeBtn = document.getElementById("close-modal-btn");
@@ -60,19 +62,7 @@ async function confirmarInicio() {
   }
 
   try {
-    const response = await fetch(
-      `http://localhost:3000/tasks/${currentTaskId}/iniciar`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error(`Erro HTTP: ${response.status}`);
-    }
+    await iniciarTask(currentTaskId);
 
     // Fechar modais
     closeConfirmModal();

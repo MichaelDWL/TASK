@@ -1,7 +1,6 @@
 import { formatDate } from "../utils/formatDate.js";
 import { openModal } from "./modal.ui.js";
-
-const API_URL = "http://localhost:3000/tasks";
+import { fetchTaskById, fetchTasksByStatus } from "../api/task.api.js";
 
 // Armazenar ordenação atual para cada coluna
 const currentSort = {
@@ -32,6 +31,7 @@ function formatarUrgencia(urgencia) {
 async function carregarPorStatus(endpoint, containerId, sortBy = "data-desc") {
   try {
     const container = document.getElementById(containerId);
+    if (!container) return;
 
     // Aplicar fade-out antes de limpar (igual ao filtro)
     const cards = container.querySelectorAll(".card");
@@ -44,8 +44,7 @@ async function carregarPorStatus(endpoint, containerId, sortBy = "data-desc") {
 
     // Aguardar animação de fade-out antes de limpar
     setTimeout(async () => {
-      const response = await fetch(`${API_URL}/${endpoint}?sortBy=${sortBy}`);
-      const tasks = await response.json();
+      const tasks = await fetchTasksByStatus(endpoint, sortBy);
 
       container.innerHTML = "";
 
@@ -130,8 +129,7 @@ async function carregarPorStatus(endpoint, containerId, sortBy = "data-desc") {
 // Função para buscar task e abrir modal
 async function abrirModalTask(taskId) {
   try {
-    const response = await fetch(`${API_URL}/${taskId}`);
-    const taskData = await response.json();
+    const taskData = await fetchTaskById(taskId);
     openModal(taskData);
   } catch (error) {
     console.error("Erro ao buscar task:", error);
