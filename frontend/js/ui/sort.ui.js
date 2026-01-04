@@ -26,6 +26,8 @@ export function initSort() {
         `.sort-options[data-column="${column}"]`
       );
 
+      if (!options) return; // Se não encontrar as opções, não faz nada
+
       // Fechar outros dropdowns
       sortOptions.forEach((opt) => {
         if (opt !== options) {
@@ -77,8 +79,12 @@ export function initSort() {
         const buttonElement = document.querySelector(
           `.btn-class[data-column="${column}"]`
         );
-        const label = buttonElement.querySelector(".sort-label");
-        label.textContent = li.textContent.trim();
+        if (buttonElement) {
+          const label = buttonElement.querySelector(".sort-label");
+          if (label) {
+            label.textContent = li.textContent.trim();
+          }
+        }
 
         // Carregar tarefas com nova ordenação
         switch (column) {

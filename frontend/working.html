@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task | Início</title>
+    <title>Task | Executando</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpj}." , crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 </head>
 
 
-<body>
+<body id="working-body">
     <header class="header">
         <div class="header-container">
             <!-- Botão de menu para mobile (no header) -->
@@ -67,7 +67,7 @@
                     </div>
 
                     <ul class="side_item font-m-desc">
-                        <li class="side-item active">
+                        <li class="side-item">
                             <a href="./">
                                 <i class="fa-solid fa-home"></i>
                                 <span class="item-description">
@@ -76,7 +76,7 @@
                             </a>
                         </li>
 
-                        <li class="side-item">
+                        <li class="side-item active">
                             <a href="./working.html">
                                 <i class="fa-solid fa-receipt"></i>
                                 <span class="item-description">
@@ -140,53 +140,7 @@
         </aside>
 
         <main class="main">
-            <!-- Seletores -->
-            <section class="seletores container">
-
-                <div class="dropdown">
-                    <div class="selected font-m-s">
-                        Todas
-                    </div>
-                    <div class="filter-icon">
-                        <img src="./assets/filter.svg" alt="">
-                    </div>
-                    <div>
-                        <ul class="options font-m-s">
-                            <li>Todas</li>
-                            <li>Pendentes</li>
-                            <li>Em Execução</li>
-                            <li>Concluídas</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Tarefas -->
             <article class="container">
-                <section class="task-pending" data-status="Pendentes">
-                    <div class="section-header">
-                        <h2 class="font-l-t c-h">Tarefas Pendentes</h2>
-                        <div class="filter-class">
-                            <button class="btn-class" data-column="pendentes">
-                                <span class="sort-label font-m-s-bold"></span>
-                                <i class="fa-solid fa-sort"></i>
-                            </button>
-                            <ul class="sort-options font-m-s-bold" data-column="pendentes">
-                                <li data-sort="data-desc">Data (Recente)</li>
-                                <li data-sort="data-asc">Data (Antiga)</li>
-                                <li data-sort="nome-asc">Nome (A-Z)</li>
-                                <li data-sort="nome-desc">Nome (Z-A)</li>
-                                <li data-sort="descricao-asc">Descrição (A-Z)</li>
-                                <li data-sort="descricao-desc">Descrição (Z-A)</li>
-                                <li data-sort="setor-asc">Setor (A-Z)</li>
-                                <li data-sort="urgencia-desc">Prioridade (Alta-baixa)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Entrar com as tarefas pendentes aqui -->
-                    <div id="tasks-pendentes" class="card-container"> </div>
-                </section>
-
                 <section class="task-working" data-status="Em Execução">
                     <div class="section-header">
                         <h2 class="font-l-t c-h">Tarefas em Execução</h2>
@@ -209,58 +163,7 @@
                     </div>
                     <div id="tasks-execucao" class="card-container"></div>
                 </section>
-
-                <section class="task-completed" data-status="Concluídas">
-                    <div class="section-header">
-                        <h2 class="font-l-t c-h">Tarefas Concluídas</h2>
-                        <div class="filter-class">
-                            <button class="btn-class" data-column="concluidas">
-                                <span class="sort-label font-m-s-bold"></span>
-                                <i class="fa-solid fa-sort"></i>
-                            </button>
-                            <ul class="sort-options font-m-s-bold" data-column="concluidas">
-                                <li data-sort="data-desc">Data (Recente)</li>
-                                <li data-sort="data-asc">Data (Antiga)</li>
-                                <li data-sort="nome-asc">Nome (A-Z)</li>
-                                <li data-sort="nome-desc">Nome (Z-A)</li>
-                                <li data-sort="descricao-asc">Descrição (A-Z)</li>
-                                <li data-sort="descricao-desc">Descrição (Z-A)</li>
-                                <li data-sort="setor-asc">Setor (A-Z)</li>
-                                <li data-sort="urgencia-desc">Prioridade (Alta-baixa)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="tasks-concluidas" class="card-container"></div>
-                </section>
             </article>
-
-            <!-- Modal de iniciar tarefa -->
-            <div class="modal-task container">
-                <div class="modal-start-task">
-                    <div class="modal-header">
-                        <h3 class="font-l-t c-h">Iniciar Tarefa</h3>
-                        <button class="close-modal-btn" id="close-modal-btn">
-                            <i class="fa-solid fa-times"></i>
-                        </button>
-                    </div>
-
-                    <div class="modal-form">
-                        <div class="card">
-                            <h3 class="font-m-t c-h">Nome do colaborador</h3>
-                            <span class="font-m-desc">Setor</span>
-                            <p class="font-m-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-                            <div class="task-urgencia">
-                                <span class="urgencia-label">Prioridade:</span>
-                                <span class="urgencia-value">Alta</span>
-                            </div>
-                            <div class="task-footer">
-                                <span class="times">20/01/2026</span>
-                                <button class="button-1" id="btn-iniciar-task">Iniciar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <!-- Modal de confirmação -->
             <div class="modal-confirm" id="modal-confirm">
@@ -280,6 +183,7 @@
                     </div>
                 </div>
             </div>
+
         </main>
     </div>
     <script type="module" src="./js/main.js"></script>

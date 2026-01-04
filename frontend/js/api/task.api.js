@@ -47,3 +47,12 @@ export async function iniciarTask(taskId) {
     headers: { "Content-Type": "application/json" },
   });
 }
+
+// Finalizar task (muda status para concluida)
+export async function finalizarTask(taskId) {
+  const url = `${BASE_URL}/${taskId}/finalizar`;
+  return await request(url, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+  });
+}

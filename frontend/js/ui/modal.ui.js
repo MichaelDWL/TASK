@@ -3,8 +3,9 @@ const modalStartTask = document.querySelector(".modal-start-task");
 const taskSections = document.querySelectorAll("[data-status]");
 const modalConfirm = document.getElementById("modal-confirm");
 let currentTaskId = null; // Armazenar ID da task atual
+let confirmAction = "iniciar"; // "iniciar" ou "finalizar"
 
-import { iniciarTask } from "../api/task.api.js";
+import { iniciarTask, finalizarTask } from "../api/task.api.js";
 
 // Inicializar listeners
 export function initCloseButton() {
@@ -31,19 +32,55 @@ export function initCloseButton() {
     });
   }
 
-  // Listener do botão "Sim, iniciar" no modal de confirmação
+  // Listener do botão de confirmação no modal (pode ser iniciar ou finalizar)
   const btnConfirm = document.getElementById("btn-confirm-start");
   if (btnConfirm) {
     btnConfirm.addEventListener("click", async () => {
-      await confirmarInicio();
+      if (confirmAction === "iniciar") {
+        await confirmarInicio();
+      } else if (confirmAction === "finalizar") {
+        await confirmarFinalizar();
+      }
     });
   }
 }
 
-// Abrir modal de confirmação
+// Abrir modal de confirmação para iniciar
 function openConfirmModal() {
   if (modalConfirm) {
+    confirmAction = "iniciar";
+    updateConfirmModalText("iniciar");
     modalConfirm.classList.add("active");
+  }
+}
+
+// Abrir modal de confirmação para finalizar
+export function openConfirmFinalizar(taskId) {
+  if (modalConfirm) {
+    currentTaskId = taskId;
+    confirmAction = "finalizar";
+    updateConfirmModalText("finalizar");
+    modalConfirm.classList.add("active");
+  }
+}
+
+// Atualizar texto do modal de confirmação
+function updateConfirmModalText(action) {
+  const header = modalConfirm?.querySelector(".modal-confirm-header h3");
+  const bodyText = modalConfirm?.querySelector(".modal-confirm-body p:first-child");
+  const warningText = modalConfirm?.querySelector(".modal-confirm-body p:last-child");
+  const btnConfirm = document.getElementById("btn-confirm-start");
+
+  if (action === "finalizar") {
+    if (header) header.textContent = "Confirmar Finalização";
+    if (bodyText) bodyText.textContent = "Você realmente deseja finalizar esta tarefa?";
+    if (warningText) warningText.textContent = "Esta ação não terá volta!";
+    if (btnConfirm) btnConfirm.textContent = "Sim, finalizar";
+  } else {
+    if (header) header.textContent = "Confirmar Início";
+    if (bodyText) bodyText.textContent = "Você realmente deseja iniciar esta tarefa?";
+    if (warningText) warningText.textContent = "Esta ação não terá volta!";
+    if (btnConfirm) btnConfirm.textContent = "Sim, iniciar";
   }
 }
 
@@ -80,9 +117,37 @@ async function confirmarInicio() {
   }
 }
 
+// Confirmar finalização da tarefa
+async function confirmarFinalizar() {
+  if (!currentTaskId) {
+    console.error("ID da tarefa não encontrado");
+    return;
+  }
+
+  try {
+    await finalizarTask(currentTaskId);
+
+    // Fechar modal de confirmação
+    closeConfirmModal();
+
+    // Recarregar as tasks em execução
+    const { carregarEmExecucao, carregarConcluidas } = await import(
+      "./task.ui.js"
+    );
+    carregarEmExecucao();
+    carregarConcluidas();
+  } catch (error) {
+    console.error("Erro ao finalizar tarefa:", error);
+    alert("Erro ao finalizar a tarefa. Tente novamente.");
+  }
+}
+
 export function openModal(taskData) {
   // Armazenar ID da task
   currentTaskId = taskData?.id || null;
+
+  // Verificar se estamos na página finishTask.html para aplicar border azul
+  const isFinishTaskPage = document.body.id === "finishTask-body";
 
   // Esconder todas as seções de tasks
   taskSections.forEach((section) => {
@@ -93,6 +158,12 @@ export function openModal(taskData) {
   if (taskData) {
     const modalCard = modalTask?.querySelector(".card");
     if (modalCard) {
+      // Adicionar classe para border azul se estiver na página finishTask
+      if (isFinishTaskPage) {
+        modalCard.classList.add("modal-card-blue");
+      } else {
+        modalCard.classList.remove("modal-card-blue");
+      }
       // Atualizar nome do colaborador
       const nomeElement = modalCard.querySelector("h3.font-m-t");
       if (nomeElement) {
@@ -152,6 +223,12 @@ export function openModal(taskData) {
 export function closeModal() {
   // Limpar ID da task
   currentTaskId = null;
+
+  // Remover classe de border azul ao fechar
+  const modalCard = modalTask?.querySelector(".card");
+  if (modalCard) {
+    modalCard.classList.remove("modal-card-blue");
+  }
 
   // Esconder o modal
   if (modalTask) {

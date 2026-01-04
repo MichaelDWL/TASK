@@ -30,6 +30,9 @@
 
 /* Cores de urgência */
 .urgencia-alta .urgencia-value {
+  background-color: #dc35464d;
+  border-radius: 4px;
+  padding: 4px 8px;
   color: #dc3545; /* Vermelho */
 }
 

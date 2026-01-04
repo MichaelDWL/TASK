@@ -8,5 +8,6 @@ router.get("/execucao", TaskController.listarEmExecucao);
 router.get("/concluidas", TaskController.listarConcluidas);
 router.get("/:id", TaskController.buscarPorId);
 router.put("/:id/iniciar", TaskController.iniciarTarefa);
+router.put("/:id/finalizar", TaskController.finalizarTarefa);
 
 export default router;

@@ -10,14 +10,28 @@ import {
 import { initSearch } from "./ui/search.ui.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Inicializar componentes básicos
   initSidebar();
-  initFiltro();
   initSort();
-  initCloseButton(); // Adicionar esta linha
-  carregarPendentes();
-  carregarEmExecucao();
-  carregarConcluidas();
+  initCloseButton();
   initSearch();
+
+  // Inicializar filtro apenas se o dropdown existir
+  if (document.querySelector(".dropdown")) {
+    initFiltro();
+  }
+
+  // Carregar tarefas apenas se os containers existirem
+  if (document.getElementById("tasks-pendentes")) {
+    carregarPendentes();
+  }
+  if (document.getElementById("tasks-execucao")) {
+    carregarEmExecucao();
+  }
+  if (document.getElementById("tasks-concluidas")) {
+    carregarConcluidas();
+  }
+
   // Expor funções globais (se usar onclick="")
   window.openModal = openModal;
   window.closeModal = closeModal;

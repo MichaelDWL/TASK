@@ -67,10 +67,29 @@ async function iniciarTarefa(req, res) {
   }
 }
 
+async function finalizarTarefa(req, res) {
+  try {
+    const { id } = req.params;
+    const sucesso = await TaskModel.finalizarTask(id);
+
+    if (!sucesso) {
+      return res
+        .status(404)
+        .json({ erro: "Tarefa não encontrada ou já finalizada" });
+    }
+
+    res.status(200).json({ mensagem: "Tarefa finalizada com sucesso" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ erro: "Erro ao finalizar tarefa" });
+  }
+}
+
 export default {
   listarPendentes,
   listarEmExecucao,
   listarConcluidas,
   buscarPorId,
   iniciarTarefa,
+  finalizarTarefa,
 };

@@ -35,6 +35,20 @@ async function iniciarTask(id) {
   return result.affectedRows > 0;
 }
 
+async function finalizarTask(id) {
+  const [result] = await pool.query(
+    `
+    UPDATE tasks 
+    SET status = 'concluida', 
+        fim_execucao = NOW()
+    WHERE id = ? AND status = 'em_execucao'
+  `,
+    [id]
+  );
+
+  return result.affectedRows > 0;
+}
+
 // Função auxiliar para construir ORDER BY
 function buildOrderBy(sortBy = "data-desc") {
   const [field, direction] = sortBy.split("-");
@@ -137,4 +151,5 @@ export default {
   findConluidas,
   findById,
   iniciarTask,
+  finalizarTask,
 };
