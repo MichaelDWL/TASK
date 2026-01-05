@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // Chave secreta para assinar tokens (use uma chave forte em produção)
-const JWT_SECRET = process.env.JWT_SECRET || "sua-chave-secreta-super-forte-aqui-mude-em-producao-2024";
+const JWT_SECRET = process.env.JWT_SECRET;
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || "4h"; // 4 horas por padrão
 
 /**
@@ -53,7 +53,7 @@ export function verifyToken(token) {
  */
 export function extractTokenFromHeader(req) {
   const authHeader = req.headers.authorization;
-  
+
   if (!authHeader) {
     return null;
   }
@@ -66,4 +66,3 @@ export function extractTokenFromHeader(req) {
 
   return parts[1];
 }
-
