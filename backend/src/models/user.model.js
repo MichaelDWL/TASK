@@ -1,14 +1,36 @@
-// Exemplo de como usar
+import pool from "../config/db.js";
 
-const pool = require("../config/database");
-
-async function findByLogin(login) {
-  const [rows] = await pool.query("SELECT * FROM users WHERE login = ?", [
-    login,
-  ]);
-  return rows[0];
+/**
+ * Busca um usuário por email
+ * @param {string} email - Email do usuário
+ * @returns {Promise<Object|null>} - Usuário encontrado ou null
+ */
+async function findByEmail(email) {
+  const [rows] = await pool.query(
+    "SELECT id, email, senha, nome_completo, login FROM users WHERE email = ?",
+    [email]
+  );
+  return rows[0] || null;
 }
 
+/**
+ * Busca um usuário por login
+ * @param {string} login - Login do usuário
+ * @returns {Promise<Object|null>} - Usuário encontrado ou null
+ */
+async function findByLogin(login) {
+  const [rows] = await pool.query(
+    "SELECT id, email, senha, nome_completo, login FROM users WHERE login = ?",
+    [login]
+  );
+  return rows[0] || null;
+}
+
+/**
+ * Cria um novo usuário
+ * @param {Object} user - Dados do usuário
+ * @returns {Promise<number>} - ID do usuário criado
+ */
 async function create(user) {
   const { login, nome_completo, email, senha, role_id } = user;
 
@@ -22,7 +44,8 @@ async function create(user) {
   return result.insertId;
 }
 
-module.exports = {
+export default {
+  findByEmail,
   findByLogin,
   create,
 };
