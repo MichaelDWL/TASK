@@ -78,8 +78,8 @@ async function carregarPorStatus(endpoint, containerId, sortBy = "data-desc") {
           // Adicionar setor (mostrar em todos os cards)
           const setorHTML = task.setor
             ? `<div class="task-setor font-m-desc">
-               <span class="setor-label">Setor:</span>
-               <span class="setor-value">${task.setor}</span>
+               <span class="font-label-m">Setor:</span>
+               <span class="font-mb-value">${task.setor}</span>
              </div>`
             : "";
 
@@ -89,23 +89,32 @@ async function carregarPorStatus(endpoint, containerId, sortBy = "data-desc") {
 
           card.innerHTML = `
           <h3 class="font-m-t">${task.nome_colaborador}</h3>
+          <div>
           ${setorHTML}
-          <p class="font-m-desc">${task.descricao}</p>
-          ${urgenciaHTML}
+          
+          </div>
+          <p class="font-mb-value">${task.descricao}</p>
+          
           <div class="task-footer">
-            <span class="times">
-              ${formatDate(task.created_at)}
-            </span>
-
-            ${
-              endpoint === "pendentes"
-                ? `<button class="button-1" data-id="${task.id}">Iniciar</button>`
-                : endpoint === "execucao" && isWorkingPage
-                ? `<button class="button-1 btn-finalizar" data-id="${task.id}">Finalizar</button>`
-                : endpoint === "concluidas" && isFinishTaskPage
-                ? `<button class="button-1 btn-ver-mais" data-id="${task.id}">Ver mais</button>`
-                : ""
-            }
+            <div class="task-footer-ut">
+              <div class="task-urgencia">${urgenciaHTML}</div> 
+              
+              <span class="times">
+                  ${formatDate(task.created_at)}
+              </span>
+            </div>
+            
+            <div class="task-footer-buttons">
+                ${
+                  endpoint === "pendentes"
+                    ? `<button class="button-1" data-id="${task.id}">Iniciar</button>`
+                    : endpoint === "execucao" && isWorkingPage
+                    ? `<button class="button-1 btn-finalizar" data-id="${task.id}">Finalizar</button>`
+                    : endpoint === "concluidas" && isFinishTaskPage
+                    ? `<button class="button-1 btn-ver-mais" data-id="${task.id}">Ver mais</button>`
+                    : ""
+                }
+            </div>
           </div>
         `;
 

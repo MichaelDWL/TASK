@@ -32,12 +32,27 @@
   line-height: 1.5;
 }
 
+.font-mb-value {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgb(176, 173, 173);
+}
+
+.font-label-m {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
 .times {
   font-family: "Inter", sans-serif;
   font-size: 0.7rem;
   line-height: 1.2;
   font-weight: 400;
   color: grey;
+  /* padding-top: 10px 20px; */
 }
 
 @media (max-width: 1200px) {

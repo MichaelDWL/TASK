@@ -37,15 +37,33 @@
 }
 
 .urgencia-media .urgencia-value {
+  background-color: #ffa6004e;
+  border-radius: 4px;
+  padding: 4px 8px;
   color: #ffa500; /* Laranja claro/quase amarelo */
 }
 
 .urgencia-baixa .urgencia-value {
+  background-color: #007bff50;
+  border-radius: 4px;
+  padding: 4px 8px;
   color: #007bff; /* Azul */
 }
 
 .task-footer {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+}
+
+.task-footer-ut {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 10px;
+}
+
+.task-footer-buttons {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
 }
