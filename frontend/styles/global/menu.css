@@ -62,8 +62,11 @@
 
 .side-item {
   border-radius: 8px;
-  padding: 0.875rem;
   cursor: pointer;
+}
+
+.side-item a {
+  padding: 0.875rem;
 }
 
 .side-item.active {
