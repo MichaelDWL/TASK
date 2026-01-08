@@ -43,6 +43,79 @@
   gap: 1rem;
 }
 
+/* Estilos para informações do modal */
+.modal-info-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  align-items: flex-start;
+}
+
+.modal-info-group.modal-descricao {
+  flex-direction: column;
+  gap: 0.25rem;
+  max-width: 100ch;
+  min-width: 100ch;
+}
+
+.modal-label {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  min-width: fit-content;
+}
+
+.modal-value {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.modal-descricao-text {
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.modal-title {
+  margin-bottom: 1rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Cores de urgência no modal */
+.modal-value.urgencia-alta {
+  background-color: #dc35464d;
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: var(--red-color);
+  font-weight: 600;
+}
+
+.modal-value.urgencia-media {
+  background-color: #ffa6004e;
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: var(--medium-color);
+  font-weight: 600;
+}
+
+.modal-value.urgencia-baixa {
+  background-color: #007bff50;
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: var(--low-color);
+  font-weight: 600;
+}
+
 /* Border azul para modal na página finishTask.html */
 .modal-card-blue {
   border-right: 5px solid var(--border-blue) !important;
@@ -77,10 +150,20 @@
 
 .modal-confirm-header {
   margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.modal-confirm-header h3 {
+  margin: 0;
 }
 
 .modal-confirm-body {
   margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.modal-confirm-body p {
+  margin: 0.5rem 0;
 }
 
 .modal-confirm-footer {

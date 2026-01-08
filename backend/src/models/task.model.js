@@ -6,13 +6,20 @@ async function findById(id) {
     SELECT 
       tasks.id,
       tasks.nome_colaborador,
+      tasks.usuario_executor_id,
+      users.nome_completo AS usuario_executor,
       tasks.descricao,
       tasks.created_at,
       tasks.urgencia,
+      tasks.status,
       tasks.setor_id,
-      setores.nome AS setor
+      setores.nome AS setor,
+      tasks.local_id,
+      locais.nome AS local
     FROM tasks
     LEFT JOIN setores ON tasks.setor_id = setores.id
+    LEFT JOIN locais ON tasks.local_id = locais.id
+    LEFT JOIN users ON tasks.usuario_executor_id = users.id
     WHERE tasks.id = ?
   `,
     [id]
@@ -21,15 +28,16 @@ async function findById(id) {
   return rows[0] || null;
 }
 
-async function iniciarTask(id) {
+async function iniciarTask(id, usuarioExecutorId) {
   const [result] = await pool.query(
     `
     UPDATE tasks 
     SET status = 'em_execucao', 
-        inicio_execucao = NOW()
+        inicio_execucao = NOW(),
+        usuario_executor_id = ?
     WHERE id = ? AND status = 'pendente'
   `,
-    [id]
+    [usuarioExecutorId, id]
   );
 
   return result.affectedRows > 0;
@@ -110,12 +118,15 @@ async function findExecutando(sortBy = "data-desc") {
     SELECT 
       tasks.id,
       tasks.nome_colaborador,
+      tasks.usuario_executor_id,
+      users.nome_completo AS usuario_executor,
       tasks.descricao,
       tasks.created_at,
       tasks.urgencia,
       tasks.setor_id,
       setores.nome AS setor
     FROM tasks
+    LEFT JOIN users ON tasks.usuario_executor_id = users.id
     LEFT JOIN setores ON tasks.setor_id = setores.id
     WHERE tasks.status = 'em_execucao'
     ${orderBy}
@@ -131,12 +142,15 @@ async function findConluidas(sortBy = "data-desc") {
     SELECT 
       tasks.id,
       tasks.nome_colaborador,
+      tasks.usuario_executor_id,
+      users.nome_completo AS usuario_executor,
       tasks.descricao,
       tasks.created_at,
       tasks.urgencia,
       tasks.setor_id,
       setores.nome AS setor
     FROM tasks
+    LEFT JOIN users ON tasks.usuario_executor_id = users.id
     LEFT JOIN setores ON tasks.setor_id = setores.id
     WHERE tasks.status = 'concluida'
     ${orderBy}

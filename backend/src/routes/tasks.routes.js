@@ -1,5 +1,6 @@
 import express from "express";
 import TaskController from "../controllers/tasks.controller.js";
+import { authenticate } from "../middleware/auth.middleware.js";
 
 const router = express.Router();
 
@@ -13,7 +14,9 @@ router.post("/", TaskController.criarTarefa);
 
 // Rotas com parâmetros
 router.get("/:id", TaskController.buscarPorId);
-router.put("/:id/iniciar", TaskController.iniciarTarefa);
-router.put("/:id/finalizar", TaskController.finalizarTarefa);
+// Rota protegida: requer autenticação para iniciar tarefa
+router.put("/:id/iniciar", authenticate, TaskController.iniciarTarefa);
+// Rota protegida: requer autenticação para finalizar tarefa
+router.put("/:id/finalizar", authenticate, TaskController.finalizarTarefa);
 
 export default router;

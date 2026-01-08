@@ -87,13 +87,46 @@ async function carregarPorStatus(endpoint, containerId, sortBy = "data-desc") {
           const isWorkingPage = document.body.id === "working-body";
           const isFinishTaskPage = document.body.id === "finishTask-body";
 
+          // Para tasks em execução e concluídas, mostrar executor e solicitante
+          const mostrarExecutor =
+            endpoint === "execucao" || endpoint === "concluidas";
+
+          // Executor aparece como título (h3) acima do solicitante
+          const executorHTML =
+            mostrarExecutor && task.usuario_executor
+              ? `<h3 class="font-m-t">${task.usuario_executor}</h3>`
+              : "";
+
+          // Solicitante aparece como campo informativo abaixo do executor
+          const solicitanteHTML =
+            mostrarExecutor && task.nome_colaborador
+              ? `<div class="task-solicitante font-m-desc">
+                 <span class="font-label-m">Solicitante:</span>
+                 <span class="font-mb-value">${task.nome_colaborador}</span>
+               </div>`
+              : "";
+
+          // Para tasks pendentes, manter o formato original (nome_colaborador como título)
+          const nomeColaboradorHTML =
+            !mostrarExecutor && task.nome_colaborador
+              ? `<h3 class="font-m-t">${task.nome_colaborador}</h3>`
+              : "";
+
+          // Limitar descrição a 155 caracteres
+          const descricaoLimitada =
+            task.descricao && task.descricao.length > 155
+              ? task.descricao.substring(0, 155) + "..."
+              : task.descricao || "";
+
           card.innerHTML = `
-          <h3 class="font-m-t">${task.nome_colaborador}</h3>
+          ${nomeColaboradorHTML}
+          ${executorHTML}
+          ${solicitanteHTML}
           <div>
           ${setorHTML}
           
           </div>
-          <p class="font-mb-value">${task.descricao}</p>
+          <p class="font-mb-value">${descricaoLimitada}</p>
           
           <div class="task-footer">
             <div class="task-footer-ut">

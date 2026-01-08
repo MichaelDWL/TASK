@@ -52,7 +52,17 @@ async function buscarPorId(req, res) {
 async function iniciarTarefa(req, res) {
   try {
     const { id } = req.params;
-    const sucesso = await TaskModel.iniciarTask(id);
+
+    // Obter ID do usuário logado (req.user vem do middleware de autenticação)
+    // Se não houver usuário logado, usar null ou retornar erro
+    const usuarioExecutorId = req.user?.userId || null;
+
+    // Se não houver usuário autenticado, retornar erro
+    if (!usuarioExecutorId) {
+      return res.status(401).json({ erro: "Usuário não autenticado" });
+    }
+
+    const sucesso = await TaskModel.iniciarTask(id, usuarioExecutorId);
 
     if (!sucesso) {
       return res

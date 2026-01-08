@@ -39,21 +39,23 @@ export async function fetchTaskById(taskId) {
   return await request(url);
 }
 
-// Iniciar task (muda status para em_execucao)
+// Iniciar task (muda status para em_execucao) - Requer autenticação
 export async function iniciarTask(taskId) {
   const url = `${BASE_URL}/${taskId}/iniciar`;
   return await request(url, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
+    credentials: "include", // Incluir cookies (token httpOnly)
   });
 }
 
-// Finalizar task (muda status para concluida)
+// Finalizar task (muda status para concluida) - Requer autenticação
 export async function finalizarTask(taskId) {
   const url = `${BASE_URL}/${taskId}/finalizar`;
   return await request(url, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
+    credentials: "include", // Incluir cookies (token httpOnly)
   });
 }
 
