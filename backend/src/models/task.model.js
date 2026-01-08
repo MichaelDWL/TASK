@@ -10,6 +10,8 @@ async function findById(id) {
       users.nome_completo AS usuario_executor,
       tasks.descricao,
       tasks.created_at,
+      tasks.inicio_execucao,
+      tasks.fim_execucao,
       tasks.urgencia,
       tasks.status,
       tasks.setor_id,
@@ -122,6 +124,7 @@ async function findExecutando(sortBy = "data-desc") {
       users.nome_completo AS usuario_executor,
       tasks.descricao,
       tasks.created_at,
+      tasks.inicio_execucao,
       tasks.urgencia,
       tasks.setor_id,
       setores.nome AS setor
@@ -146,6 +149,8 @@ async function findConluidas(sortBy = "data-desc") {
       users.nome_completo AS usuario_executor,
       tasks.descricao,
       tasks.created_at,
+      tasks.inicio_execucao,
+      tasks.fim_execucao,
       tasks.urgencia,
       tasks.setor_id,
       setores.nome AS setor

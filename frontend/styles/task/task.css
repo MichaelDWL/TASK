@@ -71,7 +71,8 @@
 /* Estilos para setor, executor e solicitante */
 .task-setor,
 .task-executor,
-.task-solicitante {
+.task-solicitante,
+.task-tempo {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -80,7 +81,8 @@
 
 .task-setor .font-label-m,
 .task-executor .font-label-m,
-.task-solicitante .font-label-m {
+.task-solicitante .font-label-m,
+.task-tempo .font-label-m {
   color: #666;
   font-weight: 600;
 }

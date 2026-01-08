@@ -1,4 +1,5 @@
 import { formatDate } from "../utils/formatDate.js";
+import { calculateTimeAgo, calculateTotalTime } from "../utils/timeAgo.js";
 import { openModal, openConfirmFinalizar } from "./modal.ui.js";
 import { fetchTaskById, fetchTasksByStatus } from "../api/task.api.js";
 
@@ -118,13 +119,33 @@ async function carregarPorStatus(endpoint, containerId, sortBy = "data-desc") {
               ? task.descricao.substring(0, 155) + "..."
               : task.descricao || "";
 
+          // Calcular e exibir tempo decorrido
+          let tempoDecorridoHTML = "";
+          if (endpoint === "execucao" && task.inicio_execucao) {
+            const tempoIniciado = calculateTimeAgo(task.inicio_execucao);
+            tempoDecorridoHTML = `
+              <div class="task-tempo font-m-desc">
+                <span class="font-label-m">Iniciada há:</span>
+                <span class="font-mb-value">${tempoIniciado}</span>
+              </div>
+            `;
+          } else if (endpoint === "concluidas" && task.fim_execucao && task.created_at) {
+            const tempoTotal = calculateTotalTime(task.created_at, task.fim_execucao);
+            tempoDecorridoHTML = `
+              <div class="task-tempo font-m-desc">
+                <span class="font-label-m">Resolvida em:</span>
+                <span class="font-mb-value">${tempoTotal}</span>
+              </div>
+            `;
+          }
+
           card.innerHTML = `
           ${nomeColaboradorHTML}
           ${executorHTML}
           ${solicitanteHTML}
           <div>
           ${setorHTML}
-          
+          ${tempoDecorridoHTML}
           </div>
           <p class="font-mb-value">${descricaoLimitada}</p>
           
