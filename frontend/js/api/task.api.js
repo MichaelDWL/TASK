@@ -56,3 +56,16 @@ export async function finalizarTask(taskId) {
     headers: { "Content-Type": "application/json" },
   });
 }
+
+/**
+ * Cria uma nova tarefa
+ * @param {Object} taskData - Dados da tarefa
+ * @returns {Promise<Object>} - Tarefa criada
+ */
+export async function criarTask(taskData) {
+  return await request(`${BASE_URL}/`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(taskData),
+  });
+}

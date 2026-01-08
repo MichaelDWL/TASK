@@ -8,6 +8,9 @@
 @import "./task/modal-task.css";
 @import "./task/task.css";
 
+/* Forms */
+@import "./forms/forms.css";
+
 /* UTILITARIOS */
 @import "./utilitarios/filtro.css";
 @import "./utilitarios/color.css";

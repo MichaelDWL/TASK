@@ -9,6 +9,8 @@
   --select-itens: #4f46e5;
   --h-color: #111827;
   --red-color: #dc3545;
+  --medium-color: #ffa500;
+  --low-color: #007bff;
 }
 
 .c-h {
@@ -17,4 +19,12 @@
 
 .c-danger {
   color: var(--red-color);
+}
+
+.c-medium {
+  color: var(--medium-color);
+}
+
+.c-low {
+  color: var(--low-color);
 }

@@ -85,6 +85,53 @@ async function finalizarTarefa(req, res) {
   }
 }
 
+async function criarTarefa(req, res) {
+  try {
+    const { nome_colaborador, descricao, urgencia, setor_id, local_id } =
+      req.body;
+
+    // Validação
+    if (!nome_colaborador || !nome_colaborador.trim()) {
+      return res.status(400).json({
+        erro: "Nome do colaborador é obrigatório",
+      });
+    }
+
+    if (!descricao || !descricao.trim()) {
+      return res.status(400).json({
+        erro: "Descrição da tarefa é obrigatória",
+      });
+    }
+
+    // Validar urgência
+    const urgenciasValidas = ["alta", "media", "baixa"];
+    const urgenciaNormalizada = urgencia ? urgencia.toLowerCase() : "media";
+
+    if (!urgenciasValidas.includes(urgenciaNormalizada)) {
+      return res.status(400).json({
+        erro: "Urgência inválida. Use: alta, media ou baixa",
+      });
+    }
+
+    // Criar tarefa
+    const taskId = await TaskModel.create({
+      nome_colaborador: nome_colaborador.trim(),
+      descricao: descricao.trim(),
+      urgencia: urgenciaNormalizada,
+      setor_id: setor_id || null,
+      local_id: local_id || null,
+    });
+
+    res.status(201).json({
+      mensagem: "Tarefa criada com sucesso",
+      id: taskId,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ erro: "Erro ao criar tarefa" });
+  }
+}
+
 export default {
   listarPendentes,
   listarEmExecucao,
@@ -92,4 +139,5 @@ export default {
   buscarPorId,
   iniciarTarefa,
   finalizarTarefa,
+  criarTarefa,
 };

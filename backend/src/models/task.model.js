@@ -145,6 +145,30 @@ async function findConluidas(sortBy = "data-desc") {
   return rows;
 }
 
+/**
+ * Cria uma nova tarefa
+ * @param {Object} taskData - Dados da tarefa
+ * @returns {Promise<number>} - ID da tarefa criada
+ */
+async function create(taskData) {
+  const {
+    nome_colaborador,
+    descricao,
+    urgencia = "media",
+    setor_id = null,
+    local_id = null,
+  } = taskData;
+
+  const [result] = await pool.query(
+    `INSERT INTO tasks 
+     (nome_colaborador, descricao, urgencia, status, setor_id, local_id, created_at)
+     VALUES (?, ?, ?, 'pendente', ?, ?, NOW())`,
+    [nome_colaborador, descricao, urgencia, setor_id, local_id]
+  );
+
+  return result.insertId;
+}
+
 export default {
   findPendente,
   findExecutando,
@@ -152,4 +176,5 @@ export default {
   findById,
   iniciarTask,
   finalizarTask,
+  create,
 };

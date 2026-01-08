@@ -1,6 +1,8 @@
 import express from "express";
 import taskRoutes from "./routes/tasks.routes.js";
 import userRoutes from "./routes/users.routes.js";
+import setorRoutes from "./routes/setores.routes.js";
+import localRoutes from "./routes/locais.routes.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 // Session removido - agora usando JWT
@@ -59,5 +61,11 @@ app.use("/tasks", taskRoutes);
 
 // rotas de user
 app.use("/users", userRoutes);
+
+// rotas de setores
+app.use("/setores", setorRoutes);
+
+// rotas de locais
+app.use("/locais", localRoutes);
 
 export default app;

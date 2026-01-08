@@ -8,6 +8,7 @@ import {
   carregarConcluidas,
 } from "./ui/task.ui.js";
 import { initSearch } from "./ui/search.ui.js";
+import { initForms } from "./ui/forms.ui.js";
 
 // Função para inicializar login
 async function initLogin() {
@@ -97,12 +98,16 @@ async function initLogin() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Verificar se estamos na página de login
+  // Verificar qual página estamos
   const isLoginPage = document.body.id === "login-body";
+  const isFormsPage = document.body.id === "forms-body";
 
   if (isLoginPage) {
     // Inicializar apenas funcionalidades de login
     initLogin();
+  } else if (isFormsPage) {
+    // Inicializar formulário de criação de tarefas
+    initForms();
   } else {
     // Inicializar componentes básicos
     initSidebar();
