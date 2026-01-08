@@ -10,6 +10,7 @@ import {
 import { initSearch } from "./ui/search.ui.js";
 import { initForms } from "./ui/forms.ui.js";
 import { initLogout } from "./ui/logout.ui.js";
+import { initRefresh } from "./ui/refresh.ui.js";
 
 // Função para inicializar login
 async function initLogin() {
@@ -116,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initCloseButton();
     initSearch();
     initLogout(); // Inicializar logout
+    initRefresh(); // Inicializar refresh
 
     // Inicializar filtro apenas se o dropdown existir
     if (document.querySelector(".dropdown")) {

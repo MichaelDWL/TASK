@@ -29,19 +29,12 @@
                 </a>
             </div>
 
-
-            <div class="src-content">
-                <div class="search-wrapper">
-                    <input class="search" type="search" name="pesquisa" id="pesquisar" placeholder="Buscar... " autocomplete="off" />
-                    <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
-                </div>
-
-                <ul class="header-list font-m-desc">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Solicitar</a></li>
-                    <li><a href="#">Suporte</a></li>
-                </ul>
-            </div>
+            <ul class="header-list font-m-desc">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Solicitar</a></li>
+                <li><a href="#">Suporte</a></li>
+            </ul>
+        </div>
         </div>
     </header>
 
@@ -140,6 +133,17 @@
         </aside>
 
         <main class="main">
+            <section class="seletores container">
+                <div class="src-content">
+                    <div class="search-wrapper">
+                        <input class="search" type="search" name="pesquisa" id="pesquisar" placeholder="Buscar... " autocomplete="off" />
+                        <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+                    </div>
+                    <button class="refresh-btn" id="refresh-btn" title="Atualizar tarefas">
+                        <i class="fa-solid fa-rotate"></i>
+                    </button>
+                </div>
+            </section>
             <article class="container">
                 <section class="task-working" data-status="Em Execução">
                     <div class="section-header">

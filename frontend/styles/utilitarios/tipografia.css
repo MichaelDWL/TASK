@@ -55,6 +55,128 @@
   /* padding-top: 10px 20px; */
 }
 
+/* ----------------------- Botão de Refresh ----------------------- */
+
+.refresh-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--background-painel);
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+}
+
+.refresh-btn:hover {
+  background-color: rgba(77, 79, 84, 0.5);
+  transform: scale(1.05);
+}
+
+.refresh-btn:active {
+  transform: scale(0.95);
+}
+
+.refresh-btn i {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.refresh-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ----------------------- Busca ----------------------- */
+
+.src-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.search {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  flex: 1;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-wrapper i {
+  position: absolute;
+  right: 10px;
+  font-size: 1rem;
+  color: grey;
+}
+
+/* Highlight de busca */
+.search-highlight {
+  background-color: var(--border-blue);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.search-highlight-active {
+  border: 2px solid var(--select-itens) !important;
+}
+
+/* Contador de resultados */
+.search-counter {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  background: #5250e3;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  z-index: 10000;
+  display: none;
+  white-space: nowrap;
+}
+
+/* ---------------------- ANIMAÇÕES DO FILTRO ---------------------- */
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  pointer-events: none;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
 @media (max-width: 1200px) {
   .font-l-t {
     font-size: 1.2rem;
