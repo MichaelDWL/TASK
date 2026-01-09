@@ -168,7 +168,7 @@ export function openModal(taskData) {
 
     const executorHTML = temExecutor
       ? `<div class="modal-info-group">
-           <span class="modal-label">Executor:</span>
+           <span class="modal-label">Atendido por:</span>
            <span class="modal-value">${taskData.usuario_executor}</span>
          </div>`
       : "";
