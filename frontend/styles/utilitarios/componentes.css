@@ -22,11 +22,11 @@
 
 .btn-login {
   width: 100%;
-  padding: 1rem;
+  padding: 1.125rem;
   background: linear-gradient(135deg, #5250e3 0%, #554de5 45%, #4f46e5 100%);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -36,5 +36,10 @@
   gap: 0.5rem;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
-  margin-top: 0.9rem;
+  margin-top: 1rem;
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
 }
