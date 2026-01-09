@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações | Início</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpj}." , crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="icon" class="icon-checklist" href="./assets/icon.svg" type="image/svg+xml">
+</head>
+
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <!-- Botão de menu para mobile (no header) -->
+            <button class="header-menu-btn" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+                <span class="font-m-s">Menu</span>
+            </button>
+            <div class="header-logo-container">
+                <a class="header-logo" href="./">
+                    <i class="fa-solid fa-tasks"></i>
+                    <h1> Task Manager </h1>
+                </a>
+            </div>
+
+
+            <ul class="header-list font-m-desc">
+                <li><a href="./">Home</a></li>
+                <li><a href="./forms.html">Solicitar</a></li>
+                <li><a href="#">Suporte</a></li>
+            </ul>
+        </div>
+        </div>
+    </header>
+
+    <div class="layout">
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+        <!-- Menu Lateral -->
+        <aside class="sidebar-container">
+            <nav class="sidebar" id="sidebar" aria-label="Menu Lateral">
+
+                <div class="sidebar_content">
+                    <div class="user">
+
+                        <img src="./assets/profile.png" id="user_avatar" alt="Avatar">
+
+                        <div class="user_infos font-m-desc">
+                            <span class="item-description">
+                                Fabio de Melo
+                            </span>
+                            <span class="item-description">
+                                Aux Manutenção
+                            </span>
+                        </div>
+                    </div>
+
+                    <ul class="side_item font-m-desc">
+                        <li class="side-item">
+                            <a href="./">
+                                <i class="fa-solid fa-home"></i>
+                                <span class="item-description">
+                                    Início
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="side-item">
+                            <a href="./working.html">
+                                <i class="fa-solid fa-receipt"></i>
+                                <span class="item-description">
+                                    Executando
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="side-item">
+                            <a href="./finishTask.html">
+                                <i class="fa-solid fa-calendar-check"></i>
+                                <span class="item-description">
+                                    Minhas Tarefas
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="side-item">
+                            <a href="./feedback.html">
+                                <i class="fa-solid fa-comment-dots"></i>
+                                <span class="item-description">
+                                    Feedbacks
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="side-item">
+                            <a href="./dashboard.html">
+                                <i class="fa-solid fa-chart-line"></i>
+                                <span class="item-description">
+                                    Dashboard
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="side-item">
+                            <a href="./operacional.html">
+                                <i class="fa-solid fa-toolbox"></i>
+                                <span class="item-description">
+                                    operacional
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="side-item active">
+                            <a href="./config.html">
+                                <i class="fa-solid fa-gear"></i>
+                                <span class="item-description">
+                                    Configurações
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <button class="open_btn" id="open_btn">
+                        <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="logout font-m-desc">
+                    <button class="logout_btn">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="item-description">
+                            Logout
+                        </span>
+                    </button>
+                </div>
+
+            </nav>
+        </aside>
+
+        <main class="main">
+            <!-- Seletores -->
+            <section class="seletores container">
+
+                <div class="dropdown">
+                    <div class="selected font-m-s">
+                        Todas
+                    </div>
+                    <div class="filter-icon">
+                        <img src="./assets/filter.svg" alt="">
+                    </div>
+                    <div>
+                        <ul class="options font-m-s">
+                            <li>Todas</li>
+                            <li>Pendentes</li>
+                            <li>Em Execução</li>
+                            <li>Concluídas</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="src-content">
+                    <div class="search-wrapper">
+                        <input class="search" type="search" name="pesquisa" id="pesquisar" placeholder="Buscar... " autocomplete="off" />
+                        <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+                    </div>
+                    <button class="refresh-btn" id="refresh-btn" title="Atualizar tarefas">
+                        <i class="fa-solid fa-rotate"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Modal de confirmação de logout -->
+            <div class="modal-confirm" id="modal-logout-confirm">
+                <div class="modal-confirm-content">
+                    <div class="modal-confirm-header">
+                        <h3 class="font-l-t c-h">Confirmar Saída</h3>
+                    </div>
+                    <div class="modal-confirm-body">
+                        <p class="font-m-desc">Você realmente deseja sair?</p>
+                    </div>
+                    <div class="modal-confirm-footer">
+                        <button class="btn-cancel" id="btn-cancel-logout">Cancelar</button>
+                        <button class="btn-confirm" id="btn-confirm-logout">Sim, sair</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>

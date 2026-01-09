@@ -215,9 +215,11 @@ export function openModal(taskData) {
     const dataHTML = `
       <div class="modal-info-group">
         <span class="modal-label">Data de criação:</span>
+        <div>
         <span class="modal-value times">${formatDate(
           taskData.created_at
         )}</span>
+        </div>
       </div>`;
 
     // Calcular e exibir tempo decorrido

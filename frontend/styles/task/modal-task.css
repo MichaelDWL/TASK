@@ -104,13 +104,6 @@
   align-self: flex-start;
 }
 
-.modal-value {
-  font-family: "Roboto", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--color-text);
-}
-
 .modal-descricao-text {
   line-height: 1.5;
   white-space: pre-wrap;
@@ -237,4 +230,10 @@
 
 .btn-confirm:hover {
   background-color: #c82333;
+}
+
+@media (max-width: 500px) {
+  .modal-start-task {
+    padding: 1rem;
+  }
 }
