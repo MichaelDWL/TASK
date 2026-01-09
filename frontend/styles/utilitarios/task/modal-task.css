@@ -48,14 +48,14 @@
   display: flex;
   gap: 0.5rem;
   margin-bottom: 0.75rem;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .modal-info-group.modal-descricao {
   flex-direction: column;
   gap: 0.25rem;
-  max-width: 100ch;
-  min-width: 100ch;
+  /* max-width: 100ch;
+  min-width: 100ch; */
 }
 
 .modal-label {
@@ -64,6 +64,8 @@
   font-weight: 600;
   color: #666;
   min-width: fit-content;
+  display: flex;
+  align-self: flex-start;
 }
 
 .modal-value {
