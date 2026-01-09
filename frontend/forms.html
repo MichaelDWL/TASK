@@ -27,8 +27,7 @@
             </div>
 
 
-            <form class="forms-request" id="forms-request">
-
+            <form class="forms-request" id="forms-request" style="width: 100%;">
                 <div class="forms-list">
                     <div class="form-group">
                         <label for="name" class="form-label font-m-s">
@@ -93,7 +92,7 @@
                             <i class="fa-solid fa-exclamation-triangle"></i>
                             Urgência
                         </label>
-                        <div class="urgencia-options" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <div class="urgencia-options">
                             <label class="checkbox-label">
                                 <input type="radio" name="urgencia" value="alta" id="urgencia-alta">
                                 <span class="font-m-s c-danger">Alta</span>
@@ -111,47 +110,47 @@
 
                     <div class="forms-task">
                         <div>
-                            <h2 class="form-label font-m-s"> Solicitação: </h2>
+                            <h2 class="form-label font-m-s"> <i class="fa-solid fa-list-check"></i> Solicitação: </h2>
                         </div>
                         <div class="form-options">
                             <label class="checkbox-label">
-                                <input type="checkbox" name="solicitacao" value="Abastecer filtro de água">
+                                <input type="radio" name="solicitacao" value="Abastecer filtro de água">
                                 <span class="font-m-s">Abastecer filtro de água</span>
                             </label>
                         </div>
                         <div class="form-options">
                             <label class="checkbox-label">
-                                <input type="checkbox" name="solicitacao" value="Trocar Lâmpada">
+                                <input type="radio" name="solicitacao" value="Trocar Lâmpada">
                                 <span class="font-m-s">Trocar Lâmpada</span>
                             </label>
                         </div>
                         <div class="form-options">
                             <label class="checkbox-label">
-                                <input type="checkbox" name="solicitacao" value="Falta de energia">
+                                <input type="radio" name="solicitacao" value="Falta de energia">
                                 <span class="font-m-s">Falta de energia</span>
                             </label>
                         </div>
                         <div class="form-options">
                             <label class="checkbox-label">
-                                <input type="checkbox" name="solicitacao" value="Trocar ventilador">
+                                <input type="radio" name="solicitacao" value="Trocar ventilador">
                                 <span class="font-m-s">Trocar ventilador</span>
                             </label>
                         </div>
                         <div class="form-options">
                             <label class="checkbox-label">
-                                <input type="checkbox" name="solicitacao" value="Vazamento no ar-condicionado">
+                                <input type="radio" name="solicitacao" value="Vazamento no ar-condicionado">
                                 <span class="font-m-s">Vazamento no ar-condicionado</span>
                             </label>
                         </div>
                         <div class="form-options">
                             <label class="checkbox-label">
-                                <input type="checkbox" name="solicitacao" value="Consertos em geral">
+                                <input type="radio" name="solicitacao" value="Consertos em geral">
                                 <span class="font-m-s">Consertos em geral</span>
                             </label>
                         </div>
                         <div class="form-options">
                             <label class="checkbox-label">
-                                <input type="checkbox" id="outros-checkbox" name="solicitacao" value="outros">
+                                <input type="radio" id="outros-checkbox" name="solicitacao" value="outros">
                                 <span class="font-m-s">Outros</span>
                             </label>
                         </div>

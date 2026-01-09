@@ -7,6 +7,7 @@ let confirmAction = "iniciar"; // "iniciar" ou "finalizar"
 
 import { iniciarTask, finalizarTask } from "../api/task.api.js";
 import { formatDate } from "../utils/formatDate.js";
+import { calculateTimeAgo, calculateTotalTime } from "../utils/timeAgo.js";
 
 // Inicializar listeners
 export function initCloseButton() {
@@ -198,7 +199,9 @@ export function openModal(taskData) {
     const urgenciaHTML = `
       <div class="modal-info-group">
         <span class="modal-label">Prioridade:</span>
+        <div>
         <span class="modal-value ${urgenciaClasse}">${urgenciaFormatada}</span>
+        </div>
       </div>`;
 
     const descricaoHTML = `
@@ -217,6 +220,31 @@ export function openModal(taskData) {
         )}</span>
       </div>`;
 
+    // Calcular e exibir tempo decorrido
+    let tempoDecorridoHTML = "";
+    if (taskData.status === "em_execucao" && taskData.inicio_execucao) {
+      const tempoIniciado = calculateTimeAgo(taskData.inicio_execucao);
+      tempoDecorridoHTML = `
+        <div class="modal-info-group">
+          <span class="modal-label">Iniciada há:</span>
+          <span class="modal-value">${tempoIniciado}</span>
+        </div>`;
+    } else if (
+      taskData.status === "concluida" &&
+      taskData.fim_execucao &&
+      taskData.created_at
+    ) {
+      const tempoTotal = calculateTotalTime(
+        taskData.created_at,
+        taskData.fim_execucao
+      );
+      tempoDecorridoHTML = `
+        <div class="modal-info-group">
+          <span class="modal-label">Resolvida em:</span>
+          <span class="modal-value">${tempoTotal}</span>
+        </div>`;
+    }
+
     // Botão "Iniciar" apenas para tasks pendentes
     const btnIniciarHTML =
       !temExecutor && document.body.id !== "finishTask-body"
@@ -232,6 +260,7 @@ export function openModal(taskData) {
       ${urgenciaHTML}
       ${descricaoHTML}
       ${dataHTML}
+      ${tempoDecorridoHTML}
       <div class="modal-footer">
         ${btnIniciarHTML}
       </div>
